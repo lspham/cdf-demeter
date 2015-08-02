@@ -1,12 +1,13 @@
 var io = require('socket.io')();
 
 io.on('connection', function (socket) {
-    socket.on('event', function (msg) {
-
+    console.log('Created socket server.');
+    socket.on('data', function (msg) {
+        console.log(msg);
     });
 
     socket.on('disconnect', function () {
-
+        console.log('Disconnected.');
     });
 });
 
