@@ -1,0 +1,9 @@
+{
+  "name": "demeter-socket-server",
+  "version": "0.0.1",
+  "description": "demeter socket server",
+  "author": "vinhlh",
+  "dependencies": {
+    "socket.io": "^1.3.6"
+  }
+}
