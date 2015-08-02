@@ -10,4 +10,4 @@ io.on('connection', function (socket) {
     });
 });
 
-io.listen(3000);
+io.listen(6001);
