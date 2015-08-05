@@ -1,0 +1,24 @@
+{"name":"demeter.socket","hostname":"vinhlh","pid":2956,"level":30,"msg":"started server","time":"2015-08-05T12:55:19.784Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2956,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:55:24.753Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2956,"level":30,"msg":"a client disconnected","time":"2015-08-05T12:55:28.170Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2956,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:55:28.226Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2956,"level":30,"msg":"received data { vinhlh: true }","time":"2015-08-05T12:55:28.339Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2978,"level":30,"msg":"started server","time":"2015-08-05T12:55:40.639Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2978,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:55:42.825Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2978,"level":30,"msg":"received data { vinhlh: true }","time":"2015-08-05T12:55:42.934Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"started server","time":"2015-08-05T12:56:02.135Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:56:03.479Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"received data { vinhlh: true }","time":"2015-08-05T12:56:03.571Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"a client disconnected","time":"2015-08-05T12:56:08.004Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:56:08.055Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":2998,"level":30,"msg":"received data { vinhlh: true }","time":"2015-08-05T12:56:08.198Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3017,"level":30,"msg":"started server","time":"2015-08-05T12:56:52.799Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3017,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T12:56:54.764Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3369,"level":30,"msg":"started server","time":"2015-08-05T13:03:22.342Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3371,"level":30,"msg":"started server","time":"2015-08-05T13:03:28.960Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3371,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T13:03:34.141Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3371,"level":30,"msg":"a client disconnected","time":"2015-08-05T13:27:39.479Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3371,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T13:27:39.575Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":3371,"level":30,"msg":"received data { dev: 1106, temp: 10, tim: 150718184130 }","time":"2015-08-05T13:27:39.705Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":4052,"level":30,"msg":"started server","time":"2015-08-05T13:27:48.770Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":4052,"level":30,"msg":"a client connected { ip: '::1' }","time":"2015-08-05T13:27:48.939Z","v":0}
