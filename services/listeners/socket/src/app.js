@@ -1,8 +1,9 @@
-var net = require('net')(),
+var net = require('net'),
     config = require('./config'),
     model = require('./model'),
     bunyan = require('bunyan');
 
+// init logger
 var logger = bunyan.createLogger({
     name: "demeter.socket",
     streams: [
@@ -18,22 +19,27 @@ var logger = bunyan.createLogger({
         }
     ]
 });
+
+// set logger
 model.setLogger(logger);
 
+// init server
 net.createServer(function (socket) {
-    logger.info('a client connected', {
+    var clientInfo = {
         ip: socket.remoteAddress,
         port: socket.removePort
-    });
+    };
+
+    logger.info('connected', clientInfo);
 
     socket.on('data', function (data) {
-        console.log(data.toString());
-        // model.saveMsg(msg);
-        // logger.info('received data', msg);
+        var msg = JSON.parse(data.toString());
+        model.saveMsg(msg);
+        logger.info('received data', msg);
     });
 
     socket.on('disconnect', function () {
-        logger.info('a client disconnected');
+        logger.info('closed', clientInfo);
     });
 }).listen(6001, '127.0.0.1');
 

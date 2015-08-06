@@ -25,52 +25,100 @@ var model = {
 
     stopConnection: function () {
         this.connection.end();
+        this.connection = null;
     },
 
     query: function (query, data, callback) {
-        this.startConnection();
+        if (!this.connection) {
+            throw Error('No MySQL connection!');
+        }
 
+        var _this = this;
         this.connection.query(query, data, function (err, rows) {
             if (err) {
-                this.logger.error(err);
+                _this.logger.error(err);
                 return false;
             }
 
-            callback(rows);
+            typeof callback !== 'undefined' && callback(rows);
         });
-
-        this.stopConnection();
     },
 
+    /**
+     * get list of sensor information
+     * @param  {Function} callback
+     * @return {[object]} array of objects
+     */
     getSensors: function (callback) {
-        this.query('SELECT * FROM sensor WHERE status = 1', [], function (rows) {
+        this.query('SELECT `id`, `key`, `status` FROM sensor WHERE status = 1 OR status = 2', [], function (rows) {
             callback(rows);
         });
     },
 
     getSensorMapper: function (callback) {
         this.getSensors(function (sensors) {
-            var mapper = {};
-            for (var sensor in sensors) {
-                mapper[sensor.key] = sensor.id;
+            var mMapper = {}, sMapper = {}, sensor;
+            for (var id in sensors) {
+                sensor = sensors[id];
+                if (sensor.status == 1) {
+                    mMapper[sensor.key] = sensor.id;
+                } else {
+                    sMapper[sensor.key] = sensor.id;
+                }
             }
 
-            callback(mapper);
+            callback(mMapper, sMapper);
         });
     },
 
-    saveMsg: function (data) {
-        var deviceId;
-
-        if (typeof data.dev === 'undefined') {
-            logger.error('undefined device id', data);
+    getDeviceId: function (devideKey) {
+        if (typeof this.testDeviceMapper[devideKey] !== 'undefined') {
+            return this.testDeviceMapper[devideKey];
         }
 
-        deviceId = this.testDeviceMapper[data.dev];
+        // TODO: decode hashed key to id, check the exist in db
 
-        this.getSensorMapper(function (sensors) {
-            console.log(sensors);
-            // this.query('INSERT INTO data (fk_device, fk_sensor, data) VALUES ' + values + '');
+        return devideKey;
+    },
+
+    /**
+     * store a socket message to MySQL database
+     * @param  {json} msg socket message
+     */
+    saveMsg: function (msg) {
+        var fkDevice, _this = this;
+
+        if (typeof msg.dev === 'undefined') {
+            _this.logger.error('undefined device id', msg);
+        }
+
+        fkDevice = _this.testDeviceMapper[msg.dev];
+
+        _this.startConnection();
+        _this.getSensorMapper(function (mMapper, sMapper) {
+            console.log('sensors', mMapper);
+
+            var mValues = [], sValues = {};
+            for (var key in msg) {
+                console.log('key', key);
+                if (typeof mMapper[key] !== 'undefined') {
+                    mValues.push('(' + [fkDevice, mMapper[key], msg[key]].join(',') + ')');
+                } else if (typeof sMapper[key] !== 'undefined') {
+                    sValues[key] = msg[key];
+                }
+            }
+
+            if (mValues.length) {
+                mValues = mValues.join(',');
+                console.log('values', mValues);
+                _this.query('INSERT INTO data (fk_device, fk_sensor, data) VALUES ' + mValues + '');
+            }
+
+            if (sValues.length) {
+                _this.query('UPDATE device SET data = ? WHERE id = ?', [JSON.stringify(sValues), fkDevice]);
+            }
+
+            _this.stopConnection();
         });
     },
 

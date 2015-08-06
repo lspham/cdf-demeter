@@ -13,7 +13,7 @@ net.createServer(function(sock) {
     // Add a 'data' event handler to this instance of socket
     sock.on('data', function(data) {
 
-        console.log('DATA ' + sock.remoteAddress + ': ' + data.toString());
+        console.log('DATA ' + sock.remoteAddress + ': ' + data);
         // Write the data back to the socket, the client will receive it as data from the server
        // sock.write('@MESS:"' + data + num + '"');
 
