@@ -6,14 +6,14 @@
 
 (function () {
     $(document).on('ready', function () {
-        $('.btn.register').on('click', function (e) {
+        $('.btn.register, .btn.register-action').on('click', function (e) {
             e.preventDefault();
             $('.modal').fadeIn(function () {
                 $(this).find('input[type="email"]').focus();
             });
         });
 
-        $('.btn.cancel').on('click', function (e) {
+        $('.modal .btn.cancel').on('click', function (e) {
             e.preventDefault();
             $('.modal').fadeOut();
         });
@@ -24,6 +24,19 @@
                 $('.modal label').fadeIn();
             } else {
                 $('.modal label').fadeOut();
+            }
+        });
+
+        $('.send').on('click', function () {
+            console.log($(this).closest('form'));
+            $(this).closest('form')[0].submit();
+        });
+
+        $('.c-hamburger').on('click', function () {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+            } else {
+                $(this).addClass('active');
             }
         });
     });
