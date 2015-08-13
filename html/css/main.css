@@ -95,11 +95,17 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-size: 12px;
     color: #646E78;
+    overflow-x: hidden;
 }
 
 html {
@@ -677,6 +683,7 @@ a {
     border-top: 1px solid #F1F2F4;
     border-bottom: 4px solid #0DAC8B;
     padding: 20px 0;
+    overflow-x: hidden;
 }
 
 #footer .left {
@@ -1371,8 +1378,7 @@ h2.app b {
 
     .block h2,
     .block p {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 0;;
     }
 
     .block .img {

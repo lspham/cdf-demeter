@@ -5,8 +5,8 @@
                     <div class="left">
                         <ul class="socials">
                             <li>
-                                <a href="mailto:info@demeter.vn">
-                                    <span class="icon-holder"><i class="footer-icon icon-mail"></i></span>info@demeter.vn
+                                <a href="mailto:demeter.vn@gmail.com">
+                                    <span class="icon-holder"><i class="footer-icon icon-mail"></i></span>demeter.vn@gmail.com
                                 </a>
                             </li>
                             <li>
