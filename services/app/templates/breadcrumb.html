@@ -1,0 +1,9 @@
+<div class="ui breadcrumb">
+    <span ng-repeat="step in steps | limitTo:(steps.length - 1)">
+        <a href="{{step.ncyBreadcrumbLink}}" class="section">{{step.ncyBreadcrumbLabel}}</a>
+        <i class="right angle icon divider"></i>
+    </span>
+    <span ng-repeat="step in steps | limitTo:-1" class="active">
+        <div class="active section">{{step.ncyBreadcrumbLabel}}</div>
+    </span>
+</div>

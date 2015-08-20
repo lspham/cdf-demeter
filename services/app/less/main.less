@@ -1,0 +1,123 @@
+body {
+    background: #F8F9FA;
+}
+
+[ui-view] {
+
+}
+
+#login {
+    background-color: #EFEFEF;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    > .grid {
+        height: 100%;
+    }
+
+    .column {
+        max-width: 450px;
+    }
+}
+
+#header {
+    background: #fff;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #EFEFEF;
+
+    .menu {
+        margin: 0;
+    }
+}
+
+#projects .dmt.box,
+#project-detail .dmt.box,
+.dmt.box {
+    background: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #F7F7F7;
+}
+
+#projects {
+    .ui.divided.horizontal.list {
+        width: 100%;
+    }
+
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+.page-header {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+#project-detail {
+    .ui.items {
+        margin: 0;
+    }
+
+    .ui.progress {
+        margin-bottom: 300msem;
+    }
+
+}
+
+#zone,
+#project-detail {
+    .ui.horizontal.list {
+        width: 100%;
+        margin-bottom: 10px;
+        .item {
+            width: 25%;
+            margin: 0;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover {
+                background: #F8F9FA;
+            }
+        }
+    }
+
+    .dmt.box {
+        margin-bottom: 20px;
+    }
+}
+
+#zone {
+    .ui.horizontal.list {
+        .item {
+            // width: 12.5%;
+        }
+    }
+
+    .ui.menu {
+        margin-bottom: 40px;
+
+    }
+
+    .ui.header.icon {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .ui.vertical.menu {
+        max-width: 100%;
+    }
+
+    .ui.image.cover {
+        margin-bottom: 20px;
+    }
+}

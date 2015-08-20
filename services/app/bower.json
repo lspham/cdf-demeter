@@ -1,0 +1,22 @@
+{
+  "name": "demeter-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vinhlh/demeter",
+  "authors": [
+    "Vinh Le <hung.vjnh@gmail.com>"
+  ],
+  "description": "Demeter App",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-chart.js": "~0.7.3",
+    "angular-ui-router": "~0.2.15",
+    "angular-breadcrumb": "~0.4.1"
+  }
+}

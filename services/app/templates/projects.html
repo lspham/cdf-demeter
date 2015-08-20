@@ -1,0 +1,67 @@
+<div id="projects">
+    <div class="ui items projects">
+        <div class="item dmt box" ng-repeat="project in vm.data.projects">
+            <div class="ui small image">
+                <img src="{{project.cover}}">
+            </div>
+            <div class="content">
+                <h2 href="#/project/{{project.id}}/{{project.name | slugify}}.html" class="ui header">{{project.name}}</h2>
+                <div class="ui relaxed divided list horizontal">
+                    <div class="item">
+                        <i class="large ion-ios-location-outline middle aligned icon"></i>
+                        <div class="content">
+                            {{project.addr}}
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="large ion-ios-people-outline middle aligned icon"></i>
+                        <div class="content">
+                            {{project.staffs}} nhân công
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="large ion-ios-keypad-outline middle aligned icon"></i>
+                        <div class="content">
+                            {{project.zoneCount}} zones
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extra">
+                    <a href="#/project/{{project.id}}/{{project.name | slugify}}.html" class="ui right floated primary button">
+                        Chi tiết
+                        <i class="right chevron icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui dimmer modals page transition">
+        <div class="ui standard small modal transition visible active scrolling">
+            <div class="header">Tạo dự án</div>
+            <div class="content">
+                <form class="ui form">
+                    <div class="field">
+                        <label>Tên dự án</label>
+                        <input type="text" name="first-name" placeholder="Tên dự án">
+                    </div>
+                    <div class="field">
+                        <label>Địa chỉ</label>
+                        <input type="text" name="last-name" placeholder="Địa chỉ">
+                    </div>
+                </form>
+            </div>
+            <div class="actions">
+                <div class="ui negative button">
+                    Huỷ
+                </div>
+                <div class="ui positive right labeled icon button">
+                    Tạo
+                    <i class="plus icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

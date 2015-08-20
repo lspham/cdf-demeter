@@ -1,0 +1,99 @@
+<div id="project-detail">
+    <div class="ui grid stackable">
+        <div class="eight wide column">
+            <h3 class="ui header">
+                <i class="ion-ios-partlysunny-outline icon"></i>
+                <div class="content">Dự báo thời tiết</div>
+            </h3>
+            <div class="dmt box">
+                <div class="ui horizontal list">
+                    <div class="item column four" ng-repeat="(key, value) in vm.data.project.weathers.series" ng-click="vm.data.project.weathers.active=key" ng-class="{active:vm.data.project.weathers.active==key}">
+                        <div class="ui statistic small {{vm.data.project.weathers.colors[key]}}">
+                            <div class="value">
+                            <!-- <i class="ion-thermometer icon"></i> -->
+                                {{vm.data.project.weathers.data[key][0]}}
+                            </div>
+                            <div class="label">{{value[0]}} ({{vm.data.project.weathers.units[key]}})</div>
+                        </div>
+                    </div>
+                </div>
+
+                <canvas id="line" class="chart chart-line" data="[vm.data.project.weathers.data[vm.data.project.weathers.active]]"
+                  labels="vm.data.project.weathers.labels" legend="true" series="vm.data.project.weathers.series[vm.data.project.weathers.active]" options="vm.data.project.weathers.options" colours="vm.data.project.weathers.colours[vm.data.project.weathers.active]"
+                  click="">
+                </canvas>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <h3 class="ui header">
+                <i class="ion-ios-browsers-outline icon"></i>
+                <div class="content">Zones</div>
+            </h3>
+            <div class="ui items">
+                <div class="item dmt box" ng-repeat="zone in vm.data.project.zones">
+                    <div class="ui tiny image">
+                        <img src="{{zone.cover}}">
+                    </div>
+                    <div class="middle aligned content">
+                        <div class="header">
+                            <a class="ui teal circular label">{{$index + 1}}</a> {{zone.name}}
+                        </div>
+                        <div class="ui indicating teal progress tiny" data-percent="{{zone.progress}}">
+                              <div class="bar" style="transition-duration: 300ms; width: {{zone.progress}}%;"></div>
+                              <div class="label">{{zone.progress}}% </div>
+                        </div>
+
+                        <div class="ui relaxed list grid">
+                            <div class="item column eight wide">
+                                <div class="content">
+                                    <div class="description">Ngày trồng</div>
+                                    <div class="header">12/08/2015</div>
+                                </div>
+                            </div>
+                            <div class="item column eight wide">
+                                <div class="content">
+                                    <div class="description">Ngày dự kiến thu hoạch</div>
+                                    <div class="header">30/08/2015</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <a href="#/project/{{vm.data.project.id}}/{{vm.data.project.name | slugify}}/zone/{{zone.id}}/{{zone.name | slugify}}.html" class="ui right floated button tiny primary">
+                            Chi tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui dimmer modals page transition">
+        <div class="ui standard small modal transition visible active scrolling">
+            <div class="header">Tạo dự án</div>
+            <div class="content">
+                <form class="ui form">
+                    <div class="field">
+                        <label>Tên dự án</label>
+                        <input type="text" name="first-name" placeholder="Tên dự án">
+                    </div>
+                    <div class="field">
+                        <label>Địa chỉ</label>
+                        <input type="text" name="last-name" placeholder="Địa chỉ">
+                    </div>
+                </form>
+            </div>
+            <div class="actions">
+                <div class="ui negative button">
+                    Huỷ
+                </div>
+                <div class="ui positive right labeled icon button">
+                    Tạo
+                    <i class="plus icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
