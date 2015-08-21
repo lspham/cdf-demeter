@@ -70,7 +70,7 @@
                 </ul>
                 <ul id="user-menu" class="menu">
                     <li>
-                        <a href="http://demo.demeter.vn">Đăng nhập</a>
+                        <a href="http://demo.demeter.vn/#/login">Đăng nhập</a>
                     </li>
                     <li>
                         <a href="#" class="btn register-action">Đăng ký</a>
