@@ -69,9 +69,9 @@
                     </li>
                 </ul>
                 <ul id="user-menu" class="menu">
-                    <!-- <li>
-                        <a href="#">Đăng nhập</a>
-                    </li> -->
+                    <li>
+                        <a href="http://demo.demeter.vn">Đăng nhập</a>
+                    </li>
                     <li>
                         <a href="#" class="btn register-action">Đăng ký</a>
                     </li>
