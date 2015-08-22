@@ -43,11 +43,18 @@ body {
     border-radius: 3px;
     padding: 20px;
     border: 1px solid #F7F7F7;
+    box-shadow: none;
 }
 
 #projects {
     .ui.divided.horizontal.list {
         width: 100%;
+
+        .item {
+            width: 100%;
+            padding-left: 0;
+            border-left: 0;
+        }
     }
 
     h2 {
@@ -76,18 +83,21 @@ body {
 
 #zone,
 #project-detail {
-    .ui.horizontal.list {
+    .ui.list {
         width: 100%;
         margin-bottom: 10px;
+
+    }
+
+    .weather {
         .item {
-            width: 25%;
-            margin: 0;
+            // margin: 0;
             cursor: pointer;
             text-align: center;
-
             &:hover {
                 background: #F8F9FA;
             }
+
         }
     }
 
@@ -114,10 +124,24 @@ body {
     }
 
     .ui.vertical.menu {
-        max-width: 100%;
+        width: 100%;
     }
 
     .ui.image.cover {
         margin-bottom: 20px;
+    }
+}
+
+canvas{
+    min-height: 200px;
+    max-height: 200px;
+}
+
+@media (max-width: 767px) {
+    canvas {
+        // max-height: 300px;
+    }
+    .ui.breadcrumb span > * {
+        margin-bottom: 10px !important;
     }
 }

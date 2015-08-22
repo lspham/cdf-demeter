@@ -1,7 +1,7 @@
 <div id="projects">
     <div class="ui items projects">
         <div class="item dmt box" ng-repeat="project in vm.data.projects">
-            <div class="ui small image">
+            <div class="ui small image rounded">
                 <img src="{{project.cover}}">
             </div>
             <div class="content">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="extra">
-                    <a href="#/project/{{project.id}}/{{project.name | slugify}}.html" class="ui right floated primary button">
+                    <a href="#/project/{{project.id}}/{{project.name | slugify}}.html" class="ui right labeled icon button right floated primary">
                         Chi tiết
                         <i class="right chevron icon"></i>
                     </a>

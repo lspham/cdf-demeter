@@ -12456,6 +12456,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/data\/images\/bg-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76085,
+		"inputAbbreviatedPath": "\/data\/images\/bg-1.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/bg-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/data\/images\/bg-2.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -12467,6 +12478,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/data\/images\/bg-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 149217,
+		"inputAbbreviatedPath": "\/data\/images\/bg-3.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/bg-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/data\/images\/bg-4.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -12474,6 +12496,61 @@
 		"initialSize": 348007,
 		"inputAbbreviatedPath": "\/data\/images\/bg-4.jpg",
 		"outputAbbreviatedPath": "\/data\/images\/bg-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/lena.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10489,
+		"inputAbbreviatedPath": "\/data\/images\/lena.png",
+		"outputAbbreviatedPath": "\/data\/images\/lena.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/lindsay.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5722,
+		"inputAbbreviatedPath": "\/data\/images\/lindsay.png",
+		"outputAbbreviatedPath": "\/data\/images\/lindsay.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/mark.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5653,
+		"inputAbbreviatedPath": "\/data\/images\/mark.png",
+		"outputAbbreviatedPath": "\/data\/images\/mark.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/matthew.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8891,
+		"inputAbbreviatedPath": "\/data\/images\/matthew.png",
+		"outputAbbreviatedPath": "\/data\/images\/matthew.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/thumb-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31212,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-1.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -12500,6 +12577,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/data\/images\/thumb-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29893,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-2.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/data\/images\/thumb-2.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -12507,6 +12595,17 @@
 		"initialSize": 110726,
 		"inputAbbreviatedPath": "\/data\/images\/thumb-2.png",
 		"outputAbbreviatedPath": "\/data\/images\/thumb-2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/thumb-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27116,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-3.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-3.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -12522,6 +12621,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/data\/images\/thumb-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32777,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-4.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/data\/images\/thumb-4.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -12529,6 +12639,17 @@
 		"initialSize": 127279,
 		"inputAbbreviatedPath": "\/data\/images\/thumb-4.png",
 		"outputAbbreviatedPath": "\/data\/images\/thumb-4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/thumb-5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35568,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-5.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-5.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -12544,6 +12665,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/data\/images\/thumb-6.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40874,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-6.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-6.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/data\/images\/thumb-6.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -12551,6 +12683,17 @@
 		"initialSize": 131159,
 		"inputAbbreviatedPath": "\/data\/images\/thumb-6.png",
 		"outputAbbreviatedPath": "\/data\/images\/thumb-6.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/images\/thumb-7.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37204,
+		"inputAbbreviatedPath": "\/data\/images\/thumb-7.jpg",
+		"outputAbbreviatedPath": "\/data\/images\/thumb-7.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -12588,15 +12731,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/farm.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/farm.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -12617,12 +12751,34 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
+	"\/js\/auth\/auth.service.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/auth\/auth.service.js",
+		"outputAbbreviatedPath": "\/js\/auth\/min\/auth.service-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
 	"\/js\/auth\/login.controller.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/auth\/login.controller.js",
 		"outputAbbreviatedPath": "\/js\/auth\/min\/login.controller-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
+	"\/js\/auth\/logout.controller.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/auth\/logout.controller.js",
+		"outputAbbreviatedPath": "\/js\/auth\/min\/logout.controller-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -12779,33 +12935,6 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
-		},
-	"\/login.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/login.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/project.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/project.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/projects.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/projects.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/semantic.json": {
 		"fileType": 524288,
@@ -15903,15 +16032,6 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
-	"\/signup.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/signup.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/templates\/breadcrumb.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -15926,6 +16046,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/templates\/login.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/templates\/logout.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/logout.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -16144,7 +16273,7 @@
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
 	"externalServerAddress": "http:\/\/app.demeter.dev",
-	"externalServerPreviewPathAddition": "\/project.html",
+	"externalServerPreviewPathAddition": "#\/projects",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,
 	"hamlAutoOutputPathFilenamePattern": "*.html",

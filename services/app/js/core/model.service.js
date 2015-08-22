@@ -46,9 +46,6 @@
                     wind: [13, 14, 10, 8, 6, 6, 11, 18]
                 },
                 labels: [],
-                options: {
-                    bezierCurve: false
-                },
                 colours: {
                     temp: ['#fbbd08'],
                     humid: ['#00b5ad'],
@@ -96,9 +93,6 @@
                     vpd: [3.5, 3.6, 3.7, 3.4, 3.9, 2.9, 3.5, 3.5]
                 },
                 labels: [],
-                options: {
-                    bezierCurve: false
-                },
                 colours: {
                     temp: ['#fbbd08'],
                     humid: ['#00b5ad'],

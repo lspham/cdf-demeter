@@ -33,9 +33,15 @@ body {
   border-radius: 3px;
   padding: 20px;
   border: 1px solid #F7F7F7;
+  box-shadow: none;
 }
 #projects .ui.divided.horizontal.list {
   width: 100%;
+}
+#projects .ui.divided.horizontal.list .item {
+  width: 100%;
+  padding-left: 0;
+  border-left: 0;
 }
 #projects h2 {
   margin-top: 15px;
@@ -53,20 +59,18 @@ body {
 #project-detail .ui.progress {
   margin-bottom: 300msem;
 }
-#zone .ui.horizontal.list,
-#project-detail .ui.horizontal.list {
+#zone .ui.list,
+#project-detail .ui.list {
   width: 100%;
   margin-bottom: 10px;
 }
-#zone .ui.horizontal.list .item,
-#project-detail .ui.horizontal.list .item {
-  width: 25%;
-  margin: 0;
+#zone .weather .item,
+#project-detail .weather .item {
   cursor: pointer;
   text-align: center;
 }
-#zone .ui.horizontal.list .item:hover,
-#project-detail .ui.horizontal.list .item:hover {
+#zone .weather .item:hover,
+#project-detail .weather .item:hover {
   background: #F8F9FA;
 }
 #zone .dmt.box,
@@ -81,8 +85,17 @@ body {
   margin-bottom: 100px;
 }
 #zone .ui.vertical.menu {
-  max-width: 100%;
+  width: 100%;
 }
 #zone .ui.image.cover {
   margin-bottom: 20px;
+}
+canvas {
+  min-height: 200px;
+  max-height: 200px;
+}
+@media (max-width: 767px) {
+  .ui.breadcrumb span > * {
+    margin-bottom: 10px !important;
+  }
 }

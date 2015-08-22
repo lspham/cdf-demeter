@@ -856,6 +856,8 @@
 			canvas.width = this.chart.width = newWidth;
 			canvas.height = this.chart.height = newHeight;
 
+			console.log(newWidth, newHeight);
+
 			retinaScale(this.chart);
 
 			if (typeof callback === "function"){
@@ -3079,7 +3081,7 @@
 			helpers.each(this.segments,function(segment){
 				segment.save();
 			});
-			
+
 			this.reflow();
 			this.render();
 		},

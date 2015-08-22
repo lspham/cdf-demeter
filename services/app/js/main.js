@@ -11,7 +11,7 @@
             'app.core',
             'app.project'
         ])
-        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$breadcrumbProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $breadcrumbProvider) {
+        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$breadcrumbProvider', 'ChartJsProvider', function ($stateProvider, $urlRouterProvider, $locationProvider, $breadcrumbProvider, ChartJsProvider) {
             $stateProvider
                 .state('home', {
                     url: '/dashboard',
@@ -76,6 +76,12 @@
             });
 
             $urlRouterProvider.otherwise('/projects');
+
+            ChartJsProvider.setOptions({
+                bezierCurve: false,
+                responsive: true,
+                maintainAspectRatio: false
+            });
 
             // $locationProvider.html5Mode(true);
         }])

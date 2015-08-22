@@ -5,9 +5,9 @@
                 <i class="ion-ios-partlysunny-outline icon"></i>
                 <div class="content">Dự báo thời tiết</div>
             </h3>
-            <div class="dmt box">
-                <div class="ui horizontal list">
-                    <div class="item column four" ng-repeat="(key, value) in vm.data.project.weathers.series" ng-click="vm.data.project.weathers.active=key" ng-class="{active:vm.data.project.weathers.active==key}">
+            <div class="dmt box weather">
+                <div class="ui list grid">
+                    <div class="item four wide computer eight wide mobile column" ng-repeat="(key, value) in vm.data.project.weathers.series" ng-click="vm.data.project.weathers.active=key" ng-class="{active:vm.data.project.weathers.active==key}">
                         <div class="ui statistic small {{vm.data.project.weathers.colors[key]}}">
                             <div class="value">
                             <!-- <i class="ion-thermometer icon"></i> -->
@@ -31,10 +31,10 @@
             </h3>
             <div class="ui items">
                 <div class="item dmt box" ng-repeat="zone in vm.data.project.zones">
-                    <div class="ui tiny image">
+                    <div class="ui tiny image rounded">
                         <img src="{{zone.cover}}">
                     </div>
-                    <div class="middle aligned content">
+                    <div class="content">
                         <div class="header">
                             <a class="ui teal circular label">{{$index + 1}}</a> {{zone.name}}
                         </div>
@@ -43,14 +43,14 @@
                               <div class="label">{{zone.progress}}% </div>
                         </div>
 
-                        <div class="ui relaxed list grid">
-                            <div class="item column eight wide">
+                        <div class="ui relaxed list grid stackable">
+                            <div class="item column eight wide computer sixteen wide tablet">
                                 <div class="content">
                                     <div class="description">Ngày trồng</div>
                                     <div class="header">12/08/2015</div>
                                 </div>
                             </div>
-                            <div class="item column eight wide">
+                            <div class="item column eight wide computer sixteen wide tablet">
                                 <div class="content">
                                     <div class="description">Ngày dự kiến thu hoạch</div>
                                     <div class="header">30/08/2015</div>
@@ -58,8 +58,9 @@
                             </div>
                         </div>
                         <div class="extra">
-                            <a href="#/project/{{vm.data.project.id}}/{{vm.data.project.name | slugify}}/zone/{{zone.id}}/{{zone.name | slugify}}.html" class="ui right floated button tiny primary">
-                            Chi tiết
+                            <a href="#/project/{{vm.data.project.id}}/{{vm.data.project.name | slugify}}/zone/{{zone.id}}/{{zone.name | slugify}}.html" class="ui right labeled icon button right floated primary">
+                                <i class="right arrow icon"></i>
+                                Chi tiết
                             </a>
                         </div>
                     </div>
