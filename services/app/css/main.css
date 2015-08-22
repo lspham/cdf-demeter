@@ -94,6 +94,18 @@ canvas {
   min-height: 200px;
   max-height: 200px;
 }
+.logo {
+  width: 40px;
+  height: 40px;
+  background: url('../img/logo.svg') center center no-repeat;
+  background-size: contain;
+}
+.logo.large {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 @media (max-width: 767px) {
   .ui.breadcrumb span > * {
     margin-bottom: 10px !important;
