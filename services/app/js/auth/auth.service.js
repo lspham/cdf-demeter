@@ -5,10 +5,10 @@
         .module('app.auth')
         .service('authService', authService);
 
-    authService.$inject = ['$window'];
+    authService.$inject = ['localStorageService'];
 
     /* @ngInject */
-    function authService($window) {
+    function authService(localStorageService) {
         var service = {
             auth: auth,
             logOut: logOut,
@@ -21,7 +21,7 @@
 
         function auth (email, password) {
             if (email == 'demeter.vn@gmail.com' && password == 'demeter.vn') {
-                $window.localStorage.setItem('demeter_user', angular.toJson({
+                localStorageService.set('demeter_user', angular.toJson({
                     expired: +new Date() + 86400000,//86400000
                     username: 'admin',
                     name: 'Vinh Le'
@@ -33,11 +33,11 @@
         }
 
         function logOut () {
-            $window.localStorage.setItem('demeter_user', null);
+            localStorageService.set('demeter_user', null);
         }
 
         function getUser () {
-            var userInfo = $window.localStorage.getItem('demeter_user');
+            var userInfo = localStorageService.get('demeter_user');
             userInfo = angular.fromJson(userInfo);
 
             if (!userInfo) {
@@ -45,7 +45,7 @@
             }
 
             if (userInfo.expired < (+ new Date())) {
-                $window.localStorage.setItem('demeter_user', null);
+                localStorageService.set('demeter_user', null);
                 return false;
             }
 

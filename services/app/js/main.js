@@ -7,6 +7,7 @@
             'ncy-angular-breadcrumb',
             'chart.js',
             'slugifier',
+            'LocalStorageModule',
             'app.auth',
             'app.core',
             'app.project'
