@@ -62,6 +62,7 @@ body {
 #zone .ui.list,
 #project-detail .ui.list {
   width: 100%;
+  margin: 0;
   margin-bottom: 10px;
 }
 #zone .weather .item,
