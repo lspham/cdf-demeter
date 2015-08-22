@@ -25,7 +25,7 @@
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 .ui.input input {
   margin: 0em;
@@ -38,11 +38,11 @@
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   text-align: left;
   line-height: 1.2142em;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   padding: 0.67861429em 1em;
   background: #ffffff;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   border-radius: 0.28571429rem;
   -webkit-transition: background-color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
           transition: background-color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
@@ -79,7 +79,7 @@
 .ui.input.down input {
   border-color: rgba(0, 0, 0, 0.3);
   background: #fafafa;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
 }
 
@@ -130,15 +130,15 @@
 }
 .ui.input.focus input::-webkit-input-placeholder,
 .ui.input input:focus input::-webkit-input-placeholder {
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 .ui.input.focus input::-moz-placeholder,
 .ui.input input:focus input::-moz-placeholder {
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 .ui.input.focus input::-ms-input-placeholder,
 .ui.input input:focus input::-ms-input-placeholder {
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /*--------------------

@@ -5,10 +5,10 @@
         .module('app.core')
         .controller('MainController', MainController);
 
-    MainController.$inject = [];
+    MainController.$inject = ['$rootScope', '$location'];
 
     /* @ngInject */
-    function MainController() {
+    function MainController($rootScope, $location) {
         var vm = this;
 
         activate();
@@ -16,7 +16,6 @@
         ////////////////
 
         function activate() {
-
         }
     }
 })();

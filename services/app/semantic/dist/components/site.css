@@ -14,7 +14,6 @@
              Page
 *******************************/
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin');
 html,
 body {
   height: 100%;
@@ -28,10 +27,10 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   background: #ffffff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4285em;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   font-smoothing: antialiased;
 }
 
@@ -103,11 +102,11 @@ p:last-child {
 --------------------*/
 
 a {
-  color: #4183c4;
+  color: #00a885;
   text-decoration: none;
 }
 a:hover {
-  color: #1e70bf;
+  color: #008f71;
   text-decoration: none;
 }
 
@@ -120,32 +119,32 @@ a:hover {
 /* Site */
 ::-webkit-selection {
   background-color: #cce2ff;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 ::-moz-selection {
   background-color: #cce2ff;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 ::selection {
   background-color: #cce2ff;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /* Form */
 textarea::-webkit-selection,
 input::-webkit-selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 textarea::-moz-selection,
 input::-moz-selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 textarea::selection,
 input::selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 
@@ -159,11 +158,3 @@ input::selection {
          Site Overrides
 *******************************/
 
-.ui.labeled.icon.buttons > .button > .icon,
-.ui.labeled.icon.button > .icon {
-  box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset, -1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
-}
-.ui.right.labeled.icon.buttons .button .icon,
-.ui.right.labeled.icon.button .icon {
-  box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.2) inset, 1px 0px 0px 0px rgba(0, 0, 0, 0.05) inset;
-}

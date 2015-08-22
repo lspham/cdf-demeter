@@ -81,7 +81,7 @@
   margin: 0em 0em;
   padding: 1.14285714em 2em;
   background: #ffffff;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   box-shadow: none;
   border-radius: 0em;
   border: none;
@@ -152,7 +152,7 @@
 .ui.steps .step .description {
   font-weight: normal;
   font-size: 0.92857143em;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 .ui.steps .step > .description {
   width: 100%;
@@ -374,7 +374,7 @@
   background: #f3f4f5;
 }
 .ui.steps .step.active .title {
-  color: #4183c4;
+  color: #00a885;
 }
 .ui.ordered.steps .step.active:before,
 .ui.steps .active.step .icon {
@@ -402,13 +402,13 @@
 .ui.steps a.active.step:hover {
   cursor: pointer;
   background: #dcddde;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /* Completed */
 .ui.steps .step.completed > .icon:before,
 .ui.ordered.steps .step.completed:before {
-  color: #21ba45;
+  color: #00a885;
 }
 
 /* Disabled */
@@ -589,15 +589,15 @@
 
 .ui.small.step,
 .ui.small.steps .step {
-  font-size: 0.8rem;
+  font-size: 0.92857143rem;
 }
 .ui.step,
 .ui.steps .step {
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 .ui.large.step,
 .ui.large.steps .step {
-  font-size: 1rem;
+  font-size: 1.14285714rem;
 }
 
 

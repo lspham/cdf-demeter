@@ -30,15 +30,17 @@
                 <div class="content">Zones</div>
             </h3>
             <div class="ui items">
-                <div class="item dmt box" ng-repeat="zone in vm.data.project.zones">
-                    <div class="ui tiny image rounded">
+                <div class="item dmt box" ng-repeat="zone in vm.data.project.zones" ng-init="url = '#/project/' + vm.data.project.id + '/' + (vm.data.project.name | slugify) + '/zone/' + zone.id + '/' + (zone.name | slugify) + '.html'">
+                    <a href="{{url}}" class="ui tiny image rounded">
                         <img src="{{zone.cover}}">
-                    </div>
+                    </a>
                     <div class="content">
                         <div class="header">
-                            <a class="ui teal circular label">{{$index + 1}}</a> {{zone.name}}
+                            <a href="{{url}}">
+                            <span class="ui teal circular label">{{$index + 1}}</span> {{zone.name}}
+                            </a>
                         </div>
-                        <div class="ui indicating teal progress tiny" data-percent="{{zone.progress}}">
+                        <div class="ui teal progress tiny" data-percent="{{zone.progress}}">
                               <div class="bar" style="transition-duration: 300ms; width: {{zone.progress}}%;"></div>
                               <div class="label">{{zone.progress}}% </div>
                         </div>
@@ -58,7 +60,7 @@
                             </div>
                         </div>
                         <div class="extra">
-                            <a href="#/project/{{vm.data.project.id}}/{{vm.data.project.name | slugify}}/zone/{{zone.id}}/{{zone.name | slugify}}.html" class="ui right labeled icon button right floated primary">
+                            <a href="{{url}}" class="ui right labeled icon button right floated positive">
                                 <i class="right arrow icon"></i>
                                 Chi tiết
                             </a>

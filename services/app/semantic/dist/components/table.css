@@ -24,7 +24,7 @@
   box-shadow: none;
   border-radius: 0.28571429rem;
   text-align: left;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   border-collapse: separate;
   border-spacing: 0px;
 }
@@ -56,7 +56,7 @@
   cursor: auto;
   background: #f9fafb;
   text-align: inherit;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   padding: 0.92857143em 0.71428571em;
   vertical-align: inherit;
   font-style: none;
@@ -87,7 +87,7 @@
   border-top: 1px solid rgba(34, 36, 38, 0.15);
   background: #f9fafb;
   text-align: inherit;
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
   padding: 0.71428571em 0.71428571em;
   vertical-align: middle;
   font-style: normal;
@@ -342,12 +342,12 @@
 
 .ui.table tr.active,
 .ui.table td.active {
-  box-shadow: 0px 0px 0px #333333 inset;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.87) inset;
 }
 .ui.table tr.active,
 .ui.table td.active {
   background: #e0e0e0 !important;
-  color: #333333 !important;
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 
 /*--------------
@@ -480,7 +480,7 @@
 .ui.selectable.table tr.active:hover,
 .ui.selectable.table tr:hover td.active {
   background: #e0e0e0 !important;
-  color: #333333 !important;
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 .ui.selectable.table tr.positive:hover,
 .ui.selectable.table tr:hover td.positive {
@@ -616,19 +616,19 @@
 
 /* Teal */
 .ui.teal.table {
-  border-top: 0.2em solid #00b5ad;
+  border-top: 0.2em solid #00a885;
 }
 .ui.inverted.teal.table {
-  background-color: #00b5ad !important;
+  background-color: #00a885 !important;
   color: #ffffff !important;
 }
 
 /* Blue */
 .ui.blue.table {
-  border-top: 0.2em solid #4a88cb;
+  border-top: 0.2em solid #2185d0;
 }
 .ui.inverted.blue.table {
-  background-color: #4a88cb !important;
+  background-color: #2185d0 !important;
   color: #ffffff !important;
 }
 
@@ -815,7 +815,7 @@
   cursor: pointer;
   white-space: nowrap;
   border-left: 1px solid rgba(34, 36, 38, 0.15);
-  color: #333333;
+  color: rgba(0, 0, 0, 0.87);
 }
 .ui.sortable.table thead th:first-child {
   border-left: none;
