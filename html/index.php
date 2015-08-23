@@ -89,19 +89,19 @@
                         <div class="hexagon">
                             <div class="icon icon-saving"></div>
                         </div>
-                        <p>Sử dụng hiệu quả nguồn nước, điện, phân bón, thức ăn chăn nuôi..</p>
+                        <p>Sử dụng hiệu quả nguồn nước, điện, phân bón, thức ăn chăn nuôi, ...</p>
                     </div>
                     <div class="value">
                         <div class="hexagon">
                             <div class="icon icon-shield"></div>
                         </div>
-                        <p>Phòng tránh bệnh hiệu quả và nâng cao năng suất và chất lượng cây trồng vật nuôi</p>
+                        <p>Phòng tránh bệnh hiệu quả và nâng cao năng suất và chất lượng cây trồng vật nuôi.</p>
                     </div>
                     <div class="value">
                         <div class="hexagon">
                             <div class="icon icon-share"></div>
                         </div>
-                        <p>Chia sẻ thông tin hiệu quả giữa các bên, giúp sản xuất giảm bớt gánh nặng đầu ra</p>
+                        <p>Chia sẻ thông tin hiệu quả giữa các bên, giúp sản xuất giảm bớt gánh nặng đầu ra.</p>
                     </div>
                 </div>
                 <div class="right">
@@ -109,7 +109,7 @@
                     <div class="hexagon">
                         <div class="icon icon-chart"></div>
                     </div>
-                    <p>Dự đoán được năng suất mùa vụ, giúp việc bố trí cơ cấu canh tác nuôi hợp lý</p>
+                    <p>Dự đoán được năng suất mùa vụ, giúp việc bố trí cơ cấu canh tác nuôi hợp lý.</p>
                 </div>
                 <div class="value">
                     <div class="hexagon">
@@ -121,7 +121,7 @@
                     <div class="hexagon">
                         <div class="icon icon-vn"></div>
                     </div>
-                    <p>Phù hợp với điều kiện kinh tế và ứng dụng tại Việt Nam</p>
+                    <p>Phù hợp với điều kiện kinh tế và ứng dụng tại Việt Nam.</p>
                 </div>
                 </div>
             </div>

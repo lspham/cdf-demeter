@@ -27,7 +27,7 @@
                     <li class="left">
                         <img src="img/thumb-7.png"/>
                         <b>Vườn cây ăn quả</b>
-                        <p>cam quýt, nho, xoài, chanh, măng cụt,  thanh long, bơ, dứa, ổi, vải, nhản, ...</p>
+                        <p>cam quýt, nho, xoài, chanh, măng cụt,  thanh long, bơ, dứa, ổi, vải, nhãn, ...</p>
                     </li>
                     <li>
                         <img src="img/thumb-8.png"/>
@@ -57,7 +57,7 @@
                     <div class="value">
                         <div class="icon icon-phone"></div>
                         <b>Điều khiển tự động</b>
-                        <p>Điều khiển tưới, châm phân, thức ăn.. trực tiếp qua ứng dụng ở bất kỳ đâu.</p>
+                        <p>Điều khiển tưới, châm phân, thức ăn, ... trực tiếp qua ứng dụng ở bất kỳ đâu.</p>
                     </div>
                     <div class="value">
                         <div class="icon icon-camera"></div>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="spec">
-                        <b>Gia tiếp từ xa</b>
+                        <b>Giao tiếp từ xa</b>
                         <p>2.5G, 3G, RF (~1km) và wifi.</p>
                     </div>
 
