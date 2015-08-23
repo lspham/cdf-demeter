@@ -33,7 +33,16 @@ net.createServer(function (socket) {
     logger.info('connected', clientInfo);
 
     socket.on('data', function (data) {
-        var msg = JSON.parse(data.toString());
+        var msg;
+
+        try {
+            data = data.toString();
+            msg = JSON.parse(data);
+        } catch (e) {
+            logger.error('invalid message', {data: data, msg: msg});
+            return false;
+        }
+
         model.saveMsg(msg);
         logger.info('received data', msg);
     });
