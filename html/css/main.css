@@ -1377,8 +1377,11 @@ h2.app b {
     }
 
     .block h2,
-    .block p {
-        margin-left: 0;;
+    .block .right h2,
+    .block p,
+    .block .right p {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .block .img {
@@ -1417,7 +1420,7 @@ h2.app b {
     }
 
     .values h2 {
-        margin-bottom: 30px;
+        margin-bottom: 50px;
     }
 
     .block.app .img {
@@ -1506,6 +1509,24 @@ h2.app b {
         margin: 0 5px;
     }
 
+    .value p {
+        margin-left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .value .hexagon {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .value {
+        margin-bottom: 70px;
+    }
 }
 
 @media (max-width: 480px) {
