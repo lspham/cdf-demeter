@@ -1382,6 +1382,7 @@ h2.app b {
     .block .right p {
         margin-left: 0;
         margin-right: 0;
+        text-align: center;
     }
 
     .block .img {
