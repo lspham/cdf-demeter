@@ -29,9 +29,9 @@ if (process.argv.indexOf('production') !== -1) {
         database: 'demeter'
     }
 
-    config.logs = {
-        dir: '/home/demeter/logs/'
-    }
+    // config.logs = {
+    //     dir: '/home/demeter/logs/'
+    // }
 }
 
 module.exports = config;

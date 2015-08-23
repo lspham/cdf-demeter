@@ -5,7 +5,8 @@ var model = {
     connection: null,
     logger: null,
     testDeviceMapper: {
-        '351802052765899': 1
+        '351802052765899': 1,
+        '862118025169999': 2
     },
 
     startConnection: function () {
@@ -81,6 +82,11 @@ var model = {
         return devideKey;
     },
 
+    parseTime: function (timeStr) {
+        timeStr = timeStr.toString();
+        return timeStr.replace(/([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])/, '20$1-$2-$3 $4:$5:$6');
+    },
+
     /**
      * store a socket message to MySQL database
      * @param  {json} msg socket message
@@ -90,19 +96,28 @@ var model = {
 
         if (typeof msg.dev === 'undefined') {
             _this.logger.error('undefined device id', msg);
+            return false;
         }
 
-        fkDevice = _this.testDeviceMapper[msg.dev];
+        fkDevice = _this.getDeviceId(msg.dev);
 
         _this.startConnection();
         _this.getSensorMapper(function (mMapper, sMapper) {
             console.log('sensors', mMapper);
 
+            // parse tim
+            if (typeof msg['tim'] === 'undefined') {
+                _this.logger.error('undefined tim', msg);
+                return false;
+            }
+
+            createdTime = _this.parseTime(msg['tim']);
+
             var mValues = [], sValues = {};
             for (var key in msg) {
                 console.log('key', key);
                 if (typeof mMapper[key] !== 'undefined') {
-                    mValues.push('(' + [fkDevice, mMapper[key], msg[key]].join(',') + ')');
+                    mValues.push('(' + [fkDevice, mMapper[key], msg[key], "'" + createdTime + "'"].join(',') + ')');
                 } else if (typeof sMapper[key] !== 'undefined') {
                     sValues[key] = msg[key];
                 }
@@ -111,7 +126,7 @@ var model = {
             if (mValues.length) {
                 mValues = mValues.join(',');
                 console.log('values', mValues);
-                _this.query('INSERT INTO data (fk_device, fk_sensor, data) VALUES ' + mValues + '');
+                _this.query('INSERT INTO data (fk_device, fk_sensor, data, created_at) VALUES ' + mValues + '');
             }
 
             if (sValues.length) {
