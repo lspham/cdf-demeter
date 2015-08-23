@@ -5,8 +5,8 @@ var model = {
     connection: null,
     logger: null,
     testDeviceMapper: {
-        '351802052765899': 1,
-        '862118025169999': 2
+        '351802052765899': 777,
+        '862118025169999': 1
     },
 
     startConnection: function () {
@@ -129,7 +129,7 @@ var model = {
                 _this.query('INSERT INTO data (fk_device, fk_sensor, data, created_at) VALUES ' + mValues + '');
             }
 
-            if (sValues.length) {
+            if (Object.keys(sValues).length) {
                 _this.query('UPDATE device SET data = ? WHERE id = ?', [JSON.stringify(sValues), fkDevice]);
             }
 
