@@ -3,13 +3,13 @@
         <div class="three wide computer six wide tablet sixteen wide mobile column">
             <div class="ui vertical pointing secondary menu">
                 <a class="item active" data-tab="dashboard"><i class="ion-ios-speedometer-outline icon large"></i> Tổng quan</a>
-                <a class="item" data-tab="settings"><i class="ion-ios-gear-outline icon large"></i> Thiết lập</a>
                 <a class="item" data-tab="data"><i class="ion-ios-analytics-outline icon large"></i> Dữ liệu</a>
                 <a class="item" data-tab="staffs"><i class="ion-ios-people-outline icon large"></i> Nhân sự</a>
                 <a class="item" data-tab="notifications"><i class="ion-ios-bell-outline icon large"></i> Cảnh báo</a>
+                <!-- <a class="item" data-tab="settings"><i class="ion-ios-gear-outline icon large"></i> Thiết lập</a> -->
                 <a class="item" data-tab="controlls"><i class="ion-ios-game-controller-b-outline icon large"></i> Điều khiển</a>
                 <a class="item" data-tab="images"><i class="ion-ios-camera-outline icon large"></i> Hình ảnh</a>
-                <a class="item" data-tab="materials"><i class="ion-social-usd-outline icon large"></i> Tài chính/ Vật tư</a>
+                <a class="item" data-tab="materials" ng-click="vm.getProjectsFinances()"><i class="ion-social-usd-outline icon large"></i> Tài chính/ Vật tư</a>
             </div>
         </div>
         <div class="thirteen wide computer ten wide tablet column">
@@ -73,7 +73,7 @@
                                         <!-- <i class="ion-thermometer icon"></i> -->
                                             {{vm.data.zone.stats.data[key][vm.data.zone.stats.data.temp.length - 1]}}
                                         </div>
-                                        <div class="label">{{value[0]}} ({{vm.data.zone.stats.units[key]}})</div>
+                                        <div class="label">{{value[0]}} {{vm.data.zone.stats.units[key] != '' ? '(' + vm.data.zone.stats.units[key] + ')' : ''}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                   </div>
                   <div class="row">
                     <div class="five wide computer sixteen wide tablet column">
-                      <h4 class="ui header">
+                      <!-- <h4 class="ui header">
                           <i class="ion-ios-game-controller-b-outline icon"></i>
                           <div class="content">Điều khiển</div>
                       </h4>
@@ -117,117 +117,53 @@
                                 <label>Tưới</label>
                               </div>
                           </div>
-                      </div>
+                          <div class="ui segment">
+                              <div class="ui toggle checkbox">
+                                <input type="checkbox" name="public">
+                                <label>Châm phân</label>
+                              </div>
+                          </div>
+                      </div> -->
                     </div>
                     <div class="eleven wide computer sixteen wide tablet column">
                       <h4 class="ui header">
-                          <i class="ion-ios-people-outline icon"></i>
-                          <div class="content">Công việc trong ngày</div>
-                      </h4>
-                      <div class="dmt box">
-                          <table class="ui very basic celled table stackable">
-                            <thead>
-                              <tr><th class="six wide">Nhân viên</th>
-                              <th class="ten wide">Công việc</th>
-                            </tr></thead>
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <h4 class="ui image header">
-                                    <img src="data/images/lena.png" class="ui mini rounded image">
-                                    <div class="content">
-                                      Vinh Lê
-                                      <div class="sub header">Nông dân
-                                    </div>
-                                  </div>
-                                </h4></td>
-                                <td>
-                                  Trộn phân bón.
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h4 class="ui image header">
-                                    <img src="data/images/matthew.png" class="ui mini rounded image">
-                                    <div class="content">
-                                      Tùng Phạm
-                                      <div class="sub header">Nông dân
-                                    </div>
-                                  </div>
-                                </h4></td>
-                                <td>
-                                  Thu hoạch nông sản.
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h4 class="ui image header">
-                                    <img src="data/images/lindsay.png" class="ui mini rounded image">
-                                    <div class="content">
-                                      Máy Nguyễn
-                                      <div class="sub header">Công nhân
-                                    </div>
-                                  </div>
-                                </h4></td>
-                                <td>
-                                  Sửa máy cày.
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <h4 class="ui image header">
-                                    <img src="data/images/mark.png" class="ui mini rounded image">
-                                    <div class="content">
-                                      Lộc Phạm
-                                      <div class="sub header">Công dân
-                                    </div>
-                                  </div>
-                                </h4></td>
-                                <td>
-                                  Ủi đất.
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                      </div>
-                      <h4 class="ui header">
                           <i class="ion-ios-bell-outline icon"></i>
-                          <div class="content">Cảnh báo</div>
+                          <div class="content">Cảnh báo gần đây</div>
                       </h4>
                       <div class="dmt box">
                           <div class="ui feed">
-                              <div class="event">
-                                  <div class="label">
-                                      <i class="ion-arrow-graph-up-right icon"></i>
-                                  </div>
-                                  <div class="content">
-                                      <div class="date">
-                                          3 ngày trước
-                                      </div>
-                                      <div class="summary">
-                                          <a>Nhiệt độ</a> vượt mức cho phép.
-                                      </div>
-                                      <div class="extra text">
-                                          Đạt 39&deg;C.
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="event">
-                                  <div class="label">
-                                      <i class="ion-arrow-graph-down-right icon"></i>
-                                  </div>
-                                  <div class="content">
-                                      <div class="date">
-                                          7 ngày trước
-                                      </div>
-                                      <div class="summary">
-                                          <a>CO2</a> vượt mức cho phép.
-                                      </div>
-                                      <div class="extra text">
-                                          Xuống dưới 10%.
-                                      </div>
-                                  </div>
-                              </div>
+                            <div class="event">
+                                <div class="label">
+                                    <i class="ion-arrow-graph-up-right icon"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="date">
+                                        1 ngày trước
+                                    </div>
+                                    <div class="text">
+                                        <a>Nhiệt độ</a> ở mức cao.
+                                    </div>
+                                    <div class="summary">
+                                        30&deg;C.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event">
+                                <div class="label">
+                                    <i class="ion-arrow-graph-down-right icon"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="date">
+                                        2 ngày trước
+                                    </div>
+                                    <div class="text">
+                                        <a>Độ ẩm</a> đang thấp.
+                                    </div>
+                                    <div class="summary">
+                                        35%.
+                                    </div>
+                                </div>
+                            </div>
                           </div>
                       </div>
                     </div>
@@ -245,64 +181,489 @@
             </div>
 
             <div class="ui tab" data-tab="data">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
-                  </div>
-                </h2>
+                <h4 class="ui header">
+                    <i class="ion-ios-partlysunny-outline icon"></i>
+                    <div class="content">Dữ liệu</div>
+                </h4>
+                <div class="dmt box weather" ng-repeat="(key, value) in vm.data.stats.series">
+                  <canvas id="line" class="chart chart-line" data="[vm.data.stats.data[key]]"
+                    labels="vm.data.stats.labels" legend="true" series="vm.data.stats.series[key]" options="vm.data.stats.options" colours="vm.data.stats.colours[key]"
+                    click="">
+                  </canvas>
+                </div>
             </div>
 
             <div class="ui tab" data-tab="staffs">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
-                  </div>
-                </h2>
+                <h4 class="ui header">
+                    <i class="ion-ios-people-outline icon"></i>
+                    <div class="content">Nhân sự</div>
+                </h4>
+                <div class="dmt box">
+                    <h4 class="ui image header">
+                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <div class="content">
+                        Diễm Trúc
+                        <div class="sub header">Theo dõi sự phát triển của rau và điều chỉnh tưới tiêu, châm phân hợp lý.</div>
+                      </div>
+                    </h4>
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="ten wide">Công việc hôm nay</th>
+                          <th class="three wide center aligned">Tình trạng</th>
+                          <th class="three wide center aligned">Hình ảnh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Kiểm tra pH/Ec và nồng độ CO2.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Kiểm tra sự phát triển của rau.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Kiểm tra và tu bổ hệ thống tưới farm rau.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Lấy mẫu rau đi xét nghiệm.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>Bổ sung phân bón cho hệ thống châm phân.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="dmt box">
+                    <h4 class="ui image header">
+                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <div class="content">
+                        Nguyễn Đông
+                        <div class="sub header">Cắt tỉa rau, theo dõi dịch bệnh, điều chỉnh hệ thống khí hậu nhà kính.</div>
+                      </div>
+                    </h4>
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="ten wide">Công việc hôm nay</th>
+                          <th class="three wide center aligned">Tình trạng</th>
+                          <th class="three wide center aligned">Hình ảnh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Kiểm tra nhiệt độ, ánh sáng, độ ẩm không khí, đất.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Cắt tỉa cành lá sâu, không đúng chuẩn.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Kiểm tra hệ thống quạt.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Lắp lại đường ống nước.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>Mang mẫu đi phân tích.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="dmt box">
+                    <h4 class="ui image header">
+                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <div class="content">
+                        Hằng Nga
+                        <div class="sub header">Thu hoạch rau và đóng gói.</div>
+                      </div>
+                    </h4>
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="ten wide">Công việc hôm nay</th>
+                          <th class="three wide center aligned">Tình trạng</th>
+                          <th class="three wide center aligned">Hình ảnh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Thu hoạch rau khu A1.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Vận chuyển đem ra đến khu sơ chế.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Sơ chế rau.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Đóng gói toàn bộ rau đã thu hoạch.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="dmt box">
+                    <h4 class="ui image header">
+                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <div class="content">
+                        Lê Hùng
+                        <div class="sub header">Thu hoạch rau và đóng gói.</div>
+                      </div>
+                    </h4>
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="ten wide">Công việc hôm nay</th>
+                          <th class="three wide center aligned">Tình trạng</th>
+                          <th class="three wide center aligned">Hình ảnh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Thu hoạch rau khu A2.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Vận chuyển ra đến khu sơ chế.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                        <tr>
+                          <td>Sơ chế rau.</td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>Đóng gói toàn bộ rau đã thu hoạch.</td>
+                          <td class="center aligned"><i class="icon ion-ios-checkmark green large"></i></td>
+                          <td class="center aligned"><button class="ui basic button mini"><i class="icon ion-ios-search-strong large"></i> Xem</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+
             </div>
             <div class="ui tab" data-tab="notifications">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
-                  </div>
-                </h2>
+                <h4 class="ui header">
+                    <i class="ion-ios-bell-outline icon"></i>
+                    <div class="content">Cảnh báo</div>
+                </h4>
+                <div class="dmt box">
+                    <div class="ui feed">
+                        <div class="event">
+                            <div class="label">
+                                <i class="ion-arrow-graph-up-right icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="date">
+                                    1 ngày trước
+                                </div>
+                                <div class="text">
+                                    <a>Nhiệt độ</a> ở mức cao.
+                                </div>
+                                <div class="summary">
+                                    30&deg;C.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="label">
+                                <i class="ion-arrow-graph-down-right icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="date">
+                                    2 ngày trước
+                                </div>
+                                <div class="text">
+                                    <a>Độ ẩm</a> đang thấp.
+                                </div>
+                                <div class="summary">
+                                    35%.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="label">
+                                <i class="ion-ios-alarm-outline icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="date">
+                                    3 ngày trước
+                                </div>
+                                <div class="text">
+                                    Còn <a href="">5 ngày</a> nữa <a href="">thu hoạch</a>.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event">
+                            <div class="label">
+                                <i class="ion-ios-person-outline icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="date">
+                                    4 ngày trước
+                                </div>
+                                <div class="text">
+                                    <a href="">Thu Hoa</a> chưa xong công việc hôm qua.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="ui tab" data-tab="controlls">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
+                <div class="ui grid stackable">
+                  <div class="sixteen wide computer column">
+                    <h4 class="ui header">
+                        <i class="ion-ios-game-controller-b-outline icon"></i>
+                        <div class="content">Điều khiển</div>
+                    </h4>
                   </div>
-                </h2>
+                  <div class="eight wide computer column">
+                    <div class="ui segments dmt box">
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="public" checked="checked">
+                              <label>Đèn</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="public">
+                              <label>Lưới cắt nắng</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="public">
+                              <label>Phun sương</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="public">
+                              <label>Tưới</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="public">
+                              <label>Châm phân</label>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="eight wide computer column">
+                    <div class="ui grid stackable">
+                      <div class="sixteen wide computer column" ng-repeat="data in vm.data.videos">
+                        <div class="ui embed" data-source="youtube" data-id="OpQFFLBMEPI" data-placeholder="data/images/rau/{{data.image}}">
+                        </div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="ui tab" data-tab="images">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
+                <h4 class="ui header">
+                    <i class="ion-ios-camera-outline icon"></i>
+                    <div class="content">Hình ảnh</div>
+                </h4>
+                <div class="ui four doubling grid cards">
+                  <div class="card" ng-repeat="data in vm.data.images">
+                    <div class="image">
+                      <img src="data/images/rau/{{data.image}}">
+                    </div>
+                    <div class="ui teal right top attached label">
+                      Ngày {{$index + 1}}
+                    </div>
+                    <div class="extra">
+                      <p>cao  <b>{{data.h}}cm</b></p>
+                      <p>rộng <b>{{data.w}}cm</b></p>
+                    </div>
                   </div>
-                </h2>
+                </div>
+
+                <h4 class="ui header">
+                    <i class="ion-ios-videocam-outline icon"></i>
+                    <div class="content">Video</div>
+                </h4>
+
+                <div class="ui grid stackable">
+                  <div class="eight wide computer column" ng-repeat="data in vm.data.videos">
+                    <div class="ui embed" data-source="youtube" data-id="OpQFFLBMEPI" data-placeholder="data/images/rau/{{data.image}}">
+                    </div>
+                   </div>
+                </div>
             </div>
-            <div class="ui tab" data-tab="materials">
-                <h2 class="ui icon header">
-                  <i class="settings icon"></i>
-                  <div class="content">
-                    Đang xây dựng
-                    <div class="sub header">Tính năng này đang được xây dựng. Vui lòng quay trở lại sau.</div>
-                  </div>
-                </h2>
+            <div class="ui tab materials" data-tab="materials">
+                <h4 class="ui header">
+                    <i class="ion-social-usd-outline icon"></i>
+                    <div class="content">Tài chính</div>
+                </h4>
+                <!-- <div class="dmt box" ng-show="vm.data.finances" ng-cloak>
+                  <canvas id="pie" class="chart chart-pie"
+                    data="vm.data.finances.data"
+                    labels="vm.data.finances.labels"
+                    options="vm.data.finances.options"
+                    legend="true">
+                  </canvas>
+                </div> -->
+                <div class="dmt box">
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="wide"></th>
+                          <th class="wide">Vụ này</th>
+                          <th class="wide">Vụ trước</th>
+                          <th class="wide">o/o</th>
+                          <th class="wide">Giá trị</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Thực tế</td>
+                          <td>1,000 kg</td>
+                          <td>9,500 kg</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 5%</td>
+                          <td>35,000,000 VNĐ</td>
+                        </tr>
+                        <tr>
+                          <td>Năng suất</td>
+                          <td>3 kg/m2</td>
+                          <td>2.5 kg/m2</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 5%</td>
+                          <td>300,000 VNĐ/m2</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="dmt box">
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="wide"></th>
+                          <th class="wide">Tháng 8</th>
+                          <th class="wide">Tháng 9</th>
+                          <th class="wide">o/o</th>
+                          <th class="wide">2014</th>
+                          <th class="wide">2015</th>
+                          <th class="wide">o/o</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Bán</td>
+                          <td>80,000,000</td>
+                          <td>100,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 20%</td>
+                          <td>900,000,000</td>
+                          <td>1,000,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 10%</td>
+                        </tr>
+                        <tr>
+                          <td>Chi phí</td>
+                          <td>50,000,000</td>
+                          <td>40,000,000</td>
+                          <td><i class="icon ion-arrow-down-c red"></i> 20%</td>
+                          <td>500,000,000</td>
+                          <td>400,000,000</td>
+                          <td><i class="icon ion-arrow-down-c red"></i> 20%</td>
+                        </tr>
+                        <tr>
+                          <td>Đầu tư</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>100,000,000</td>
+                          <td>200,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 50%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div class="dmt box">
+                    <table class="ui very basic celled table stackable">
+                      <thead>
+                        <tr>
+                          <th class="wide"></th>
+                          <th class="wide">Tháng 8</th>
+                          <th class="wide">Tháng 9</th>
+                          <th class="wide">%</th>
+                          <th class="wide">2014</th>
+                          <th class="wide">Trung bình năm</th>
+                          <th class="wide">%</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Thu</td>
+                          <td>80,000,000</td>
+                          <td>100,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 20%</td>
+                          <td>1,000,000,000</td>
+                          <td>2,000,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 100%</td>
+                        </tr>
+                        <tr>
+                          <td>Chi</td>
+                          <td>50,000,000</td>
+                          <td>50,000,000</td>
+                          <td><i class="icon ion-minus-round grey"></i>0%</td>
+                          <td>1,000,000,000</td>
+                          <td>1,000,000,000</td>
+                          <td><i class="icon ion-minus-round grey"></i>0%</td>
+                        </tr>
+                        <tr>
+                          <td>Dòng tiền</td>
+                          <td>30,000,000</td>
+                          <td>50,000,000</td>
+                          <td><i class="icon ion-arrow-up-c green"></i> 35%</td>
+                          <td>0</td>
+                          <td>1,000,000,000</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>
     </div>
 <script>
-    $('.ui.menu .item').tab();
+    $('.ui.menu .item').tab({
+      onVisible: function () {
+        window.dispatchEvent(new Event('resize'));
+      }
+    });
+
+    $('.ui.embed').embed();
 </script>
 </div>

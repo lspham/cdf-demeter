@@ -12,6 +12,8 @@
         var vm = this;
         $rootScope.pageTitle = 'Chi tiết Zone';
 
+        vm.getProjectsFinances = getProjectsFinances;
+
         activate();
 
         ////////////////
@@ -25,6 +27,26 @@
             modelService.getProjectDetail($stateParams['projectId'], function (results) {
                 vm.data.project = results;
             });
+
+            modelService.getProjectFullStats($stateParams['projectId'], function (results) {
+                vm.data.stats = results;
+            });
+
+            modelService.getProjectImages($stateParams['projectId'], function (results) {
+                vm.data.images = results;
+            });
+
+            modelService.getProjectVideos($stateParams['projectId'], function (results) {
+                vm.data.videos = results;
+            });
         }
+
+        function getProjectsFinances () {
+            modelService.getProjectFinances($stateParams['projectId'], function (results) {
+                vm.data.finances = results;
+                // vm.data.finances = [];
+            });
+        }
+
     }
 })();

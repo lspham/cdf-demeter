@@ -81,7 +81,8 @@
             ChartJsProvider.setOptions({
                 bezierCurve: false,
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                animation: false
             });
 
             // $locationProvider.html5Mode(true);

@@ -91,6 +91,26 @@ body {
 #zone .ui.image.cover {
   margin-bottom: 20px;
 }
+#zone .ui.cards > .card {
+  background: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  border: 1px solid #F7F7F7;
+  box-shadow: none;
+  padding: 0;
+  border-color: #F1F1F1;
+}
+#zone .ui.cards > .card p {
+  margin-bottom: 0;
+  width: 50%;
+  float: left;
+}
+#zone .ui.cards > .card p b {
+  font-weight: normal;
+}
+#zone .ui.cards > .card p:last-child {
+  text-align: right;
+}
 canvas {
   min-height: 200px;
   max-height: 200px;
@@ -106,6 +126,12 @@ canvas {
   height: 80px;
   margin: 0 auto;
   margin-bottom: 10px;
+}
+.materials .up {
+  color: green;
+}
+.materials .down {
+  color: red;
 }
 @media (max-width: 767px) {
   .ui.breadcrumb span > * {
