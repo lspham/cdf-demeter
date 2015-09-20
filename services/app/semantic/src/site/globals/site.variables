@@ -2,7 +2,9 @@
      User Global Variables
 *******************************/
 
+@fontName: false;
 @pageFont: Helvetica Neue, Helvetica, Arial, sans-serif;
+@headerFont: @pageFont;
 @importGoogleFonts: false;
 
 @linkColor: #00A885;

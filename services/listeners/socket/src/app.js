@@ -10,12 +10,12 @@ var logger = bunyan.createLogger({
         {
             level: 'info',
             path: config.logs.dir + config.logs.info,
-            stream: process.stdout
+            // stream: process.stdout
         },
         {
             level: 'error',
             path: config.logs.dir + config.logs.error,
-            stream: process.stdout
+            // stream: process.stdout
         }
     ]
 });

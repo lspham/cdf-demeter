@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI x.x - Message
+ * # Semantic UI 2.1.3 - Message
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -42,7 +42,7 @@
 /* Header */
 .ui.message .header {
   display: block;
-  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: bold;
   margin: -0.14285em 0em 0rem 0em;
 }

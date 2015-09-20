@@ -23,24 +23,24 @@
                         </h4>
                         <div class="dmt box">
                             <img src="{{vm.data.zone.cover}}" alt="" class="ui image rounded cover medium centered">
-                            <div class="ui teal progress tiny" data-percent="20">
-                                  <div class="bar" style="transition-duration: 300ms; width: 20%;"></div>
-                                  <div class="label">20% </div>
+                            <div class="ui teal progress tiny" data-percent="{{vm.data.zone.progress}}">
+                                  <div class="bar" style="transition-duration: 300ms; width: {{vm.data.zone.progress}}%;"></div>
+                                  <div class="label">{{vm.data.zone.progress}}% </div>
                             </div>
 
                             <div class="ui relaxed divided list">
                                 <div class="item">
                                     <i class="large ion-ios-calendar-outline middle aligned icon"></i>
                                     <div class="content">
-                                        <div class="description">Ngày trồng</div>
-                                        <div class="header">12/08/2015</div>
+                                        <div class="description">{{vm.data.zone.id == 999 ? 'Lần hái trước' : 'Ngày trồng' }}</div>
+                                        <div class="header">{{vm.data.zone.start | date: 'dd/MM/yyyy'}}</div>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <i class="large ion-ios-calendar-outline middle aligned icon"></i>
                                     <div class="content">
-                                        <div class="description">Ngày dự kiến thu hoạch</div>
-                                        <div class="header">12/10/2015</div>
+                                        <div class="description">{{vm.data.zone.id == 999 ? 'Lần hái tiếp theo' : 'Ngày dự kiến thu hoạch'}}</div>
+                                        <div class="header">{{vm.data.zone.end | date: 'dd/MM/yyyy'}}</div>
                                     </div>
                                 </div>
                                 <div class="item">
@@ -78,10 +78,12 @@
                                 </div>
                             </div>
 
-                            <canvas id="line" class="chart chart-line" data="[vm.data.zone.stats.data[vm.data.zone.stats.active]]"
+                            <!-- <canvas id="line" class="chart chart-line" data="[vm.data.zone.stats.data[vm.data.zone.stats.active]]"
                               labels="vm.data.zone.stats.labels" legend="true" series="vm.data.zone.stats.series[vm.data.zone.stats.active]" options="vm.data.zone.stats.options" colours="vm.data.zone.stats.colours[vm.data.zone.stats.active]"
                               click="">
-                            </canvas>
+                            </canvas> -->
+
+                            <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active]], labels: vm.data.zone.stats.labels}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
                         </div>
                     </div>
                   </div>
@@ -186,10 +188,14 @@
                     <div class="content">Dữ liệu</div>
                 </h4>
                 <div class="dmt box weather" ng-repeat="(key, value) in vm.data.stats.series">
-                  <canvas id="line" class="chart chart-line" data="[vm.data.stats.data[key]]"
+                  <!-- <canvas id="line" class="chart chart-line" data="[vm.data.stats.data[key]]"
                     labels="vm.data.stats.labels" legend="true" series="vm.data.stats.series[key]" options="vm.data.stats.options" colours="vm.data.stats.colours[key]"
                     click="">
-                  </canvas>
+                  </canvas> -->
+
+                  {{vm.data.stats.series[key][0]}}
+
+                  <chartist class="ct-chart" chartist-data="{series: [vm.data.stats.data[key]], labels: vm.data.stats.labels}" chartist-chart-type="Line" chartist-chart-options="vm.data.stats.options"></chartist>
                 </div>
             </div>
 
@@ -245,7 +251,7 @@
                 </div>
                 <div class="dmt box">
                     <h4 class="ui image header">
-                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <img src="data/images/matthew.png" class="ui mini rounded image">
                       <div class="content">
                         Nguyễn Đông
                         <div class="sub header">Cắt tỉa rau, theo dõi dịch bệnh, điều chỉnh hệ thống khí hậu nhà kính.</div>
@@ -290,7 +296,7 @@
                 </div>
                 <div class="dmt box">
                     <h4 class="ui image header">
-                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <img src="data/images/lindsay.png" class="ui mini rounded image">
                       <div class="content">
                         Hằng Nga
                         <div class="sub header">Thu hoạch rau và đóng gói.</div>
@@ -330,7 +336,7 @@
                 </div>
                 <div class="dmt box">
                     <h4 class="ui image header">
-                      <img src="data/images/lena.png" class="ui mini rounded image">
+                      <img src="data/images/mark.png" class="ui mini rounded image">
                       <div class="content">
                         Lê Hùng
                         <div class="sub header">Thu hoạch rau và đóng gói.</div>
@@ -528,14 +534,14 @@
                     <i class="ion-social-usd-outline icon"></i>
                     <div class="content">Tài chính</div>
                 </h4>
-                <!-- <div class="dmt box" ng-show="vm.data.finances" ng-cloak>
+                <div class="dmt box" ng-show="vm.data.finances" ng-cloak>
                   <canvas id="pie" class="chart chart-pie"
                     data="vm.data.finances.data"
                     labels="vm.data.finances.labels"
                     options="vm.data.finances.options"
                     legend="true">
                   </canvas>
-                </div> -->
+                </div>
                 <div class="dmt box">
                     <table class="ui very basic celled table stackable">
                       <thead>

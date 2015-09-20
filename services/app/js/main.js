@@ -6,6 +6,7 @@
             'ui.router',
             'ncy-angular-breadcrumb',
             'chart.js',
+            'angular-chartist',
             'slugifier',
             'LocalStorageModule',
             'app.auth',

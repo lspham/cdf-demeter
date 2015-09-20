@@ -55,10 +55,12 @@
                     </div>
                 </div>
 
-                <canvas id="line" class="chart chart-line" data="[vm.data.project.weathers.data[vm.data.project.weathers.active]]"
+                <chartist class="ct-chart" chartist-data="{series: [vm.data.project.weathers.data[vm.data.project.weathers.active]], labels: vm.data.project.weathers.labels}" chartist-chart-type="Line" chartist-chart-options="vm.data.project.weathers.options"></chartist>
+
+                <!-- <canvas id="line" class="chart chart-line" data="[vm.data.project.weathers.data[vm.data.project.weathers.active]]"
                   labels="vm.data.project.weathers.labels" legend="true" series="vm.data.project.weathers.series[vm.data.project.weathers.active]" options="vm.data.project.weathers.options" colours="vm.data.project.weathers.colours[vm.data.project.weathers.active]"
                   click="">
-                </canvas>
+                </canvas> -->
             </div>
         </div>
         <div class="eight wide column">
@@ -85,14 +87,14 @@
                         <div class="ui relaxed list grid stackable">
                             <div class="item column eight wide computer sixteen wide tablet">
                                 <div class="content">
-                                    <div class="description">Ngày trồng</div>
-                                    <div class="header">12/08/2015</div>
+                                    <div class="description">{{zone.id == 999 ? 'Lần hái trước' : 'Ngày trồng' }}</div>
+                                    <div class="header">{{zone.start | date: 'dd/MM/yyyy'}}</div>
                                 </div>
                             </div>
                             <div class="item column eight wide computer sixteen wide tablet">
                                 <div class="content">
-                                    <div class="description">Ngày dự kiến thu hoạch</div>
-                                    <div class="header">12/10/2015</div>
+                                    <div class="description">{{zone.id == 999 ? 'Lần hái tiếp theo' : 'Ngày dự kiến thu hoạch'}}</div>
+                                    <div class="header">{{zone.end | date: 'dd/MM/yyyy'}}</div>
                                 </div>
                             </div>
                         </div>

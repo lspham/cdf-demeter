@@ -106,6 +106,17 @@ body {
                 background: #F8F9FA;
             }
 
+            .value,
+            .label {
+                font-weight: 300;
+            }
+
+            &.active {
+                .value,
+                .label {
+                    color: #00a885;
+                }
+            }
         }
     }
 
@@ -187,6 +198,26 @@ canvas{
     color: red;
   }
 }
+
+/* Use this selector to override the line style on a given series */
+.ct-series-a .ct-line {
+    /* Set the colour of this series line */
+    stroke: #00a885;
+    /* Control the thikness of your lines */
+    stroke-width: 2px;
+    /* Create a dashed line with a pattern */
+    /* stroke-dasharray: 10px 20px; */
+}
+
+.ct-series-a .ct-point {
+    /* Colour of your points */
+    stroke: #00a885;
+    /* Size of your points */
+    stroke-width: 8px;
+    /* Make your points appear as squares */
+    /* stroke-linecap: square;*/
+}
+
 
 @media (max-width: 767px) {
     canvas {

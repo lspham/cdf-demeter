@@ -32,6 +32,19 @@
 
         }
 
+        function getLineOptions () {
+            return {
+                lineSmooth: false,
+                fullWidth: true,
+                chartPadding: {
+                    top: 15,
+                    right: 25,
+                    bottom: 5,
+                    left: 10
+                },
+            };
+        }
+
         function getProject () {
             weathers = {
                 active: 'temp',
@@ -48,24 +61,25 @@
                     wind: 'km/h'
                 },
                 data: {
-                    temp: [33, 28, 27, 27, 27, 26, 27, 31],
-                    humid: [59, 62, 10, 7, 20, 36, 42, 51], // humidity - độ ẩm
-                    precip: [89, 100, 24, 14, 19, 34, 44, 81], //precipitation - lượng mưa
-                    wind: [13, 14, 10, 8, 6, 6, 11, 18]
+                    temp: [],
+                    humid: [],
+                    precip: [],
+                    wind: [],
                 },
                 labels: [],
-                colours: {
-                    temp: ['#fbbd08'],
-                    humid: ['#00b5ad'],
-                    precip: ['#4a88cb'],
-                    wind: ['#767676']
-                },
-                colors: {
-                    temp: 'yellow',
-                    humid: 'teal',
-                    precip: 'blue',
-                    wind: 'grey'
-                }
+                // colours: {
+                //     temp: ['#fbbd08'],
+                //     humid: ['#00b5ad'],
+                //     precip: ['#4a88cb'],
+                //     wind: ['#767676']
+                // },
+                // colors: {
+                //     temp: 'yellow',
+                //     humid: 'teal',
+                //     precip: 'blue',
+                //     wind: 'grey'
+                // },
+                options: getLineOptions()
             };
 
             var stats = getStats(7);
@@ -76,36 +90,40 @@
                     name: 'Cầu Đất Farm',
                     cover: 'data/images/bg-3.jpg',
                     addr: 'Cầu Đất, Lâm Đồng.',
-                    staffs: 692,
+                    staffs: 61,
                     zoneCount: 2,
                     area: 220,
                     zones: {
-                        111: {
-                            id: 111,
-                            name: 'Nhà kính - Dâu',
-                            cover: 'data/images/farm-dau.jpg',
-                            staffs: 4,
-                            notifications: 4,
-                            progress: 40,
-                            stats: stats
-                        },
-                        222: {
-                            id: 222,
+                        // 111: {
+                        //     id: 111,
+                        //     name: 'Nhà kính - Dâu',
+                        //     cover: 'data/images/farm-dau.jpg',
+                        //     staffs: 4,
+                        //     notifications: 4,
+                        //     progress: 40,
+                        //     stats: stats
+                        // },
+                        999: {
+                            id: 999,
                             name: 'Đồi chè',
                             cover: 'data/images/bg-3.jpg',
                             staffs: 11,
                             notifications: 6,
                             progress: 18,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         },
                         666: {
-                            id: 222,
+                            id: 666,
                             name: 'Farm rau',
                             cover: 'data/images/farm-rau.jpg',
                             staffs: 11,
                             notifications: 6,
                             progress: 80,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 15),
+                            start: new Date(2015, 8, 10)
                         }
                     },
                     weathers: weathers
@@ -126,7 +144,9 @@
                             staffs: 4,
                             notifications: 4,
                             progress: 10,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         },
                         444: {
                             id: 444,
@@ -135,7 +155,9 @@
                             staffs: 18,
                             notifications: 1,
                             progress: 96,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         },
                         555: {
                             id: 555,
@@ -144,7 +166,9 @@
                             staffs: 91,
                             notifications: 2,
                             progress: 50,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         },
                     },
                     weathers: weathers
@@ -165,7 +189,9 @@
                             staffs: 4,
                             notifications: 4,
                             progress: 10,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         }
                     },
                     weathers: weathers
@@ -186,7 +212,9 @@
                             staffs: 4,
                             notifications: 4,
                             progress: 10,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         }
                     },
                     weathers: weathers
@@ -207,7 +235,9 @@
                             staffs: 4,
                             notifications: 4,
                             progress: 10,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2015, 9, 20),
+                            start: new Date(2015, 8, 1)
                         }
                     },
                     weathers: weathers
@@ -222,14 +252,31 @@
             return onSuccess(projects);
         }
 
+        function calcProgress (data) {
+            var today = new Date();
+
+            for (var key in data.zones) {
+                data.zones[key].progress = today > data.zones[key].end ? 100 : Math.floor((today - data.zones[key].start) * 100/ (data.zones[key].end - data.zones[key].start));
+            }
+
+            return data;
+        }
+
         function getProjectDetail (projectId, onSuccess) {
-            var projects = getProject();
-            return onSuccess(projects[projectId]);
+            var projects = getProject(),
+                data = projects[projectId];
+
+            data = calcProgress(data);
+
+            return onSuccess(data);
         }
 
         function getZoneDetail(projectId, zoneId, onSuccess) {
-            var projects = getProject();
-            return onSuccess(projects[projectId]['zones'][zoneId]);
+            var projects = getProject(),
+                data = projects[projectId];
+
+            data = calcProgress(data);
+            return onSuccess(data['zones'][zoneId]);
         }
 
         function getProjectFullStats (projectId, onSuccess) {
@@ -436,31 +483,29 @@
                     vpd: []
                 },
                 labels: [],
-                colours: {
-                    temp: ['#fbbd08'],
-                    humid: ['#00b5ad'],
-                    humid2: ['#00b5ad'],
-                    o2: ['#767676'],
-                    co2: ['#767676'],
-                    light: ['#db2828'],
-                    ph: ['#4a88cb'],
-                    ec: ['#a5673f'],
-                    vpd: ['#21ba45']
-                },
-                colors: {
-                    temp: 'yellow',
-                    humid: 'teal',
-                    humid2: 'teal',
-                    o2: 'grey',
-                    co2: 'grey',
-                    light: 'red',
-                    ph: 'blue',
-                    ec: 'brown',
-                    vpd: 'green',
-                },
-                options: {
-                    scaleBeginAtZero: true
-                }
+                // colours: {
+                //     temp: ['#fbbd08'],
+                //     humid: ['#00b5ad'],
+                //     humid2: ['#00b5ad'],
+                //     o2: ['#767676'],
+                //     co2: ['#767676'],
+                //     light: ['#db2828'],
+                //     ph: ['#4a88cb'],
+                //     ec: ['#a5673f'],
+                //     vpd: ['#21ba45']
+                // },
+                // colors: {
+                //     temp: 'yellow',
+                //     humid: 'teal',
+                //     humid2: 'teal',
+                //     o2: 'grey',
+                //     co2: 'grey',
+                //     light: 'red',
+                //     ph: 'blue',
+                //     ec: 'brown',
+                //     vpd: 'green',
+                // },
+                options: getLineOptions()
             };
 
             weathers.labels = [];
@@ -470,6 +515,10 @@
                 date.setDate(date.getDate() + i);
                 // weathers.labels.push(date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear());
                 weathers.labels.push(date.getDate() + '/' + (date.getMonth() + 1));
+                weathers.data.temp[i]   = randomInt(22, 5);
+                weathers.data.humid[i]  = randomInt(75, 15);
+                weathers.data.precip[i] = randomInt(60, 40);
+                weathers.data.wind[i]   = randomInt(15, 10);
 
                 date = new Date();
                 date.setDate(date.getDate() - dateCount + i + 1);

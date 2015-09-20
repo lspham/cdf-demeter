@@ -74,6 +74,18 @@ body {
 #project-detail .weather .item:hover {
   background: #F8F9FA;
 }
+#zone .weather .item .value,
+#project-detail .weather .item .value,
+#zone .weather .item .label,
+#project-detail .weather .item .label {
+  font-weight: 300;
+}
+#zone .weather .item.active .value,
+#project-detail .weather .item.active .value,
+#zone .weather .item.active .label,
+#project-detail .weather .item.active .label {
+  color: #00a885;
+}
 #zone .dmt.box,
 #project-detail .dmt.box {
   margin-bottom: 20px;
@@ -132,6 +144,23 @@ canvas {
 }
 .materials .down {
   color: red;
+}
+/* Use this selector to override the line style on a given series */
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #00a885;
+  /* Control the thikness of your lines */
+  stroke-width: 2px;
+  /* Create a dashed line with a pattern */
+  /* stroke-dasharray: 10px 20px; */
+}
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: #00a885;
+  /* Size of your points */
+  stroke-width: 8px;
+  /* Make your points appear as squares */
+  /* stroke-linecap: square;*/
 }
 @media (max-width: 767px) {
   .ui.breadcrumb span > * {
