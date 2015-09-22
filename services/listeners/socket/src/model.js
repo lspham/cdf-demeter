@@ -73,9 +73,9 @@ var model = {
     },
 
     getDeviceId: function (devideKey) {
-        // if (typeof this.testDeviceMapper[devideKey] !== 'undefined') {
-        //     return this.testDeviceMapper[devideKey];
-        // }
+        if (typeof this.testDeviceMapper[devideKey] !== 'undefined') {
+            return this.testDeviceMapper[devideKey];
+        }
 
         // TODO: decode hashed key to id, check the exist in db
 
