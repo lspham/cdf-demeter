@@ -5,8 +5,8 @@ var model = {
     connection: null,
     logger: null,
     testDeviceMapper: {
-        '351802052765899': 777,
-        '862118025169999': 1
+        '862118025168888': 2, // điều khiển
+        '862118025169999': 1 // thời tiết
     },
 
     startConnection: function () {
@@ -73,9 +73,9 @@ var model = {
     },
 
     getDeviceId: function (devideKey) {
-        if (typeof this.testDeviceMapper[devideKey] !== 'undefined') {
-            return this.testDeviceMapper[devideKey];
-        }
+        // if (typeof this.testDeviceMapper[devideKey] !== 'undefined') {
+        //     return this.testDeviceMapper[devideKey];
+        // }
 
         // TODO: decode hashed key to id, check the exist in db
 
@@ -83,8 +83,7 @@ var model = {
     },
 
     parseTime: function (timeStr) {
-        timeStr = timeStr.toString();
-        return timeStr.replace(/([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])([0-9][0-9])/, '20$1-$2-$3 $4:$5:$6');
+        return new Date(timeStr * 1000).toISOString().slice(0, 19).replace('T', ' ');
     },
 
     /**

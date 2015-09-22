@@ -1,0 +1,24 @@
+{"name":"demeter.socket","hostname":"vinhlh","pid":63912,"level":30,"msg":"started server","time":"2015-09-17T12:41:52.546Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":63912,"level":30,"msg":"connected { ip: '127.0.0.1', port: undefined }","time":"2015-09-17T12:41:54.115Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":63912,"level":30,"msg":"received data { dev: '862118025169999',\n  tim: 150823150249,\n  lat: 11.884473,\n  lon: 108.563549,\n  temp: 100,\n  humid: 40,\n  pmois: 1500,\n  rain: 1,\n  light: 1000,\n  height: 1000,\n  bat: 1000,\n  sig: 1000,\n  fwr: 'FAGV1.1' }","time":"2015-09-17T12:41:54.180Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":30,"msg":"started server","time":"2015-09-17T12:52:40.472Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":30,"msg":"connected { ip: '127.0.0.1', port: undefined }","time":"2015-09-17T12:52:48.863Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:04.453Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:05.509Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:06.468Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:06.780Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:07.672Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:07.884Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:08.184Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:08.420Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\r\\n', msg: undefined }","time":"2015-09-17T12:53:08.654Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\r\\n', msg: undefined }","time":"2015-09-17T12:53:08.827Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: 'quit\\r\\n', msg: undefined }","time":"2015-09-17T12:53:09.620Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: 'exit\\r\\n', msg: undefined }","time":"2015-09-17T12:53:10.607Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\r\\n', msg: undefined }","time":"2015-09-17T12:53:12.428Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '����\\u0006', msg: undefined }","time":"2015-09-17T12:53:13.608Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:14.812Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:15.036Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:15.216Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\r\\n', msg: undefined }","time":"2015-09-17T12:53:22.435Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":1174,"level":30,"msg":"started server","time":"2015-09-22T15:54:01.407Z","v":0}
