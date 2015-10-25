@@ -71,7 +71,7 @@
                                     <div class="ui statistic small {{vm.data.zone.stats.colors[key]}}">
                                         <div class="value">
                                         <!-- <i class="ion-thermometer icon"></i> -->
-                                            {{vm.data.zone.stats.data[key][vm.data.zone.stats.data.temp.length - 1]}}
+                                            {{vm.data.zone.stats.data[key][0]}}
                                         </div>
                                         <div class="label">{{value[0]}} {{vm.data.zone.stats.units[key] != '' ? '(' + vm.data.zone.stats.units[key] + ')' : ''}}</div>
                                     </div>
@@ -83,7 +83,7 @@
                               click="">
                             </canvas> -->
 
-                            <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active]], labels: vm.data.zone.stats.labels}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
+                            <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active].slice().reverse()], labels: vm.data.zone.stats.labels.slice().reverse()}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
                         </div>
                     </div>
                   </div>
@@ -457,34 +457,34 @@
                     <div class="ui segments dmt box">
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
-                              <input type="checkbox" name="public" checked="checked">
+                              <input type="checkbox" name="controller1" ng-change="vm.sendCmd(1, vm.controller1)" ng-model="vm.controller1" checked="checked">
                               <label>Đèn</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
-                              <input type="checkbox" name="public">
-                              <label>Lưới cắt nắng</label>
-                            </div>
-                        </div>
-                        <div class="ui segment">
-                            <div class="ui toggle checkbox">
-                              <input type="checkbox" name="public">
+                              <input type="checkbox" name="controller2" ng-change="vm.sendCmd(2, vm.controller2)" ng-model="vm.controller2">
                               <label>Phun sương</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
-                              <input type="checkbox" name="public">
-                              <label>Tưới</label>
+                              <input type="checkbox" name="controller3" ng-change="vm.sendCmd(3, vm.controller3)" ng-model="vm.controller3">
+                              <label>Lưới cắt nắng</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
+                              <label>Tưới</label>
+                            </div>
+                        </div>
+                        <!-- <div class="ui segment">
+                            <div class="ui toggle checkbox">
                               <input type="checkbox" name="public">
                               <label>Châm phân</label>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                   </div>
                   <div class="eight wide computer column">

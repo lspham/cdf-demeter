@@ -16,7 +16,8 @@
             getProjectFullStats: getProjectFullStats,
             getProjectImages: getProjectImages,
             getProjectVideos: getProjectVideos,
-            getProjectFinances: getProjectFinances
+            getProjectFinances: getProjectFinances,
+            getStats: getStats
         },
         projects,
         weathers;
@@ -38,7 +39,7 @@
                 fullWidth: true,
                 chartPadding: {
                     top: 15,
-                    right: 25,
+                    right: 45,
                     bottom: 5,
                     left: 10
                 },
@@ -445,7 +446,7 @@
             return randomInt(value * 10, dt * 10) / 10;
         }
 
-        function getStats(dateCount) {
+        function getStats(dateCount, extendData) {
             console.log('getStats', dateCount);
             var stats = {
                 active: 'temp',
@@ -456,7 +457,7 @@
                     o2: ['O2'],
                     co2: ['CO2'],
                     light: ['Ánh sáng'],
-                    ph: ['pH'],
+                    pH: ['pH'],
                     ec: ['EC'],
                     vpd: ['VPD']
                 },
@@ -467,7 +468,7 @@
                     o2: 'ppm',
                     co2: 'ppm',
                     light: 'lux',
-                    ph: '',
+                    pH: '',
                     ec: '',
                     vpd: ''
                 },
@@ -478,7 +479,7 @@
                     o2: [],
                     co2: [],
                     light: [],
-                    ph: [],
+                    pH: [],
                     ec: [],
                     vpd: []
                 },
@@ -532,9 +533,21 @@
                 stats.data.o2[i]     = randomInt(9, 3);
                 stats.data.co2[i]    = randomInt(380, 30);
                 stats.data.light[i]  = randomInt(475, 125);
-                stats.data.ph[i]     = randomFloat(6.2, 0.5);
+                stats.data.pH[i]     = randomFloat(6.2, 0.5);
                 stats.data.ec[i]     = randomFloat(1.1, 0.4);
                 stats.data.vpd[i]    = randomFloat(1.4, 0.3);
+            }
+
+            if (dateCount == 0) {
+                stats.data = extendData.data;
+                stats.labels = extendData.labels;
+
+                stats.data.humid2 = [];
+                stats.data.vpd = [];
+                for (var i = 0; i < 7; i++) {
+                    stats.data.humid2[i] = randomInt(65, 15);
+                    stats.data.vpd[i]    = randomFloat(1.4, 0.3);
+                }
             }
 
             return stats;
