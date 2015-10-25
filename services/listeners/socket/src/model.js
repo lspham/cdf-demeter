@@ -94,7 +94,7 @@ var model = {
         var fkDevice, _this = this;
 
         if (typeof msg.dev === 'undefined') {
-            _this.logger.error('undefined device id', msg);
+            _this.logger.error('undefinedDeviceId', msg);
             return false;
         }
 
@@ -106,7 +106,7 @@ var model = {
 
             // parse tim
             if (typeof msg['tim'] === 'undefined') {
-                _this.logger.error('undefined tim', msg);
+                _this.logger.error('undefinedTim', msg);
                 return false;
             }
 
@@ -138,6 +138,57 @@ var model = {
 
     setLogger: function (logger) {
         this.logger = logger;
+    },
+
+    fetchInitData: function(deviceId, callback) {
+        this.startConnection();
+
+        var query = "SELECT `sensor`.`key`, `data`.`data`, `data`.`created_at`, UNIX_TIMESTAMP(`data`.`created_at`) as tim FROM `data` JOIN `sensor` ON `sensor`.`id` = `data`.`fk_sensor` WHERE `data`.`fk_device` = 2 AND DATE(`data`.`created_at`) = DATE(NOW()) ORDER BY `data`.`created_at` DESC";
+        this.query(query, [], function(rows) {
+            var stats = {
+                labels: {},
+                data: {}
+            };
+
+            for (var i in rows) {
+                var row = rows[i],
+                    tim = new Date(row['tim'] * 1000 + 7 * 60 * 60 * 1000),
+                    min = tim.getMinutes(),
+                    sec = tim.getSeconds(),
+                    hour = tim.getHours();
+
+                if (min < 10) {
+                    min = '0' + min;
+                }
+
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+
+                if (hour < 10) {
+                    hour = '0' + hour;
+                }
+
+
+                tim = hour + ':' + min + ':' + sec;
+
+                if (Object.keys(stats.labels).length < 7) {
+                    stats.labels[tim] = true;
+                }
+
+                if (typeof stats.data[row['key']] === 'undefined') {
+                    stats.data[row['key']] = [];
+                }
+
+                if (stats.data[row['key']].length < 7) {
+                    stats.data[row['key']].push(row['data']);
+                }
+            }
+            stats.labels = Object.keys(stats.labels);
+            callback(stats);
+        });
+
+        this.stopConnection();
     }
 };
 

@@ -22,3 +22,15 @@
 {"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\u0004', msg: undefined }","time":"2015-09-17T12:53:15.216Z","v":0}
 {"name":"demeter.socket","hostname":"vinhlh","pid":64820,"level":50,"msg":"invalid message { data: '\\r\\n', msg: undefined }","time":"2015-09-17T12:53:22.435Z","v":0}
 {"name":"demeter.socket","hostname":"vinhlh","pid":1174,"level":30,"msg":"started server","time":"2015-09-22T15:54:01.407Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39308,"level":30,"msg":"started server","time":"2015-10-24T03:48:36.966Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39393,"level":30,"msg":"started server","time":"2015-10-24T03:49:51.121Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39422,"level":30,"msg":"started server","time":"2015-10-24T03:50:14.663Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39535,"level":30,"msg":"started server","time":"2015-10-24T03:51:34.329Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39535,"level":30,"msg":"connected { ip: '127.0.0.1', port: undefined }","time":"2015-10-24T04:01:55.355Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":39535,"level":30,"msg":"received data { dev: '862118025169999',\n  tim: 150823150249,\n  lat: 11.884473,\n  lon: 108.563549,\n  temp: 100,\n  humid: 40,\n  pmois: 1500,\n  rain: 1,\n  light: 1000,\n  height: 1000,\n  bat: 1000,\n  sig: 1000,\n  fwr: 'FAGV1.1' }","time":"2015-10-24T04:01:55.628Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":40985,"level":30,"msg":"started server","time":"2015-10-24T04:08:06.887Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":40985,"level":30,"msg":"connected { ip: '127.0.0.1', port: undefined }","time":"2015-10-24T04:08:10.531Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":40985,"level":30,"msg":"received data { dev: '862118025168888',\n  tim: 150823150249,\n  lat: 11.884473,\n  lon: 108.563549,\n  temp: 100,\n  humid: 40,\n  pmois: 1500,\n  rain: 1,\n  light: 1000,\n  height: 1000,\n  bat: 1000,\n  sig: 1000,\n  fwr: 'FAGV1.1' }","time":"2015-10-24T04:08:10.693Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":41096,"level":30,"msg":"started server","time":"2015-10-24T04:08:58.179Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":41096,"level":30,"msg":"connected { ip: '127.0.0.1', port: undefined }","time":"2015-10-24T04:09:00.722Z","v":0}
+{"name":"demeter.socket","hostname":"vinhlh","pid":41096,"level":30,"msg":"received data { dev: '862118025168888',\n  tim: 150823150249,\n  lat: 11.884473,\n  lon: 108.563549,\n  temp: 100,\n  humid: 40,\n  pmois: 1500,\n  rain: 1,\n  light: 1000,\n  height: 1000,\n  bat: 1000,\n  sig: 1000,\n  fwr: 'FAGV1.1' }","time":"2015-10-24T04:09:00.846Z","v":0}
