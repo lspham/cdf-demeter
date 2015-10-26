@@ -20,10 +20,11 @@
             return service;
 
             function init() {
+                // socket = io('http://localhost:6006');
                 socket = io('http://demo2.demeter.vn:3003');
             }
 
-            function subscribe(deviceId, onInitData, onUpdateData, onInitStatus) {
+            function subscribe(deviceId, onInitData, onUpdateData, onInitStatus, onOnline) {
                 if (!deviceId) {
                     deviceId = '862118025168888';
                 }
@@ -35,9 +36,12 @@
                 socket.on('data', function (data) {
                     onUpdateData(data);
                 });
-		socket.on('initStatus', function (data) {
-		    onInitStatus(data);
-		});
+        		socket.on('initStatus', function (data) {
+        		    onInitStatus(data);
+        		});
+                socket.on('online', function (data) {
+                    onOnline(data);
+                });
             }
 
             function cmd(deviceId, cmd) {

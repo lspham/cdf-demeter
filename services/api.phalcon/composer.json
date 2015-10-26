@@ -1,0 +1,8 @@
+{
+    "require": {
+        "namshi/jose": "^5.0",
+        "raveren/kint": "^1.0",
+        "phpunit/phpunit": "^4.8",
+        "phalcon/incubator": "^2.0"
+    }
+}

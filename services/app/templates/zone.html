@@ -84,6 +84,17 @@
                             </canvas> -->
 
                             <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active].slice().reverse()], labels: vm.data.zone.stats.labels.slice().reverse()}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
+
+                            <div class="online-status">
+                              <div class="online" ng-show="vm.online">
+                                <a class="ui green empty circular label"></a>
+                                <span class="ui green">Online</span>
+                              </div>
+                              <div class="offline" ng-show="!vm.online">
+                                <a class="ui red empty circular label"></a>
+                                <span class="ui red">Offline</span>
+                              </div>
+                            </div>
                         </div>
                     </div>
                   </div>
@@ -478,6 +489,17 @@
                               <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
                               <label>Tưới</label>
                             </div>
+                        </div>
+
+                        <div class="online-status">
+                          <div class="online" ng-show="vm.online">
+                            <a class="ui green empty circular label"></a>
+                            <span class="ui green">Online</span>
+                          </div>
+                          <div class="offline" ng-show="!vm.online">
+                            <a class="ui red empty circular label"></a>
+                            <span class="ui red">Offline</span>
+                          </div>
                         </div>
                         <!-- <div class="ui segment">
                             <div class="ui toggle checkbox">

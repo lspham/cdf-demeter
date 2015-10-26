@@ -167,3 +167,9 @@ canvas {
     margin-bottom: 10px !important;
   }
 }
+
+.online-status {
+  margin-top: 10px;
+  width: 100%;
+  text-align: right;
+}
