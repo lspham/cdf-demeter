@@ -28,7 +28,12 @@ model.setLogger(logger);
 
 // init redis
 redisSubClient = redis.createClient();
+redisClient = redis.createClient();
 redisPubClient = redis.createClient();
+
+redisClient.on('error', function(error) {
+    console.log('RedisError ' + error);
+});
 
 redisSubClient.on('error', function(error) {
     console.log('RedisError ' + error);
@@ -46,6 +51,7 @@ net.createServer(function(socket) {
     }, isSubcribed = false;
 
     logger.info('clientConnected', clientInfo);
+    redisClient.set('deviceOnline', 1);
 
     socket.on('data', function(data) {
         var msg;
@@ -88,8 +94,9 @@ net.createServer(function(socket) {
         logger.info('socketError', error);
     });
 
-    socket.on('disconnect', function() {
+    socket.on('close', function() {
         logger.info('closed', clientInfo);
+        redisClient.set('deviceOnline', 0);
     });
 
 }).listen(6001, '127.0.0.1');
