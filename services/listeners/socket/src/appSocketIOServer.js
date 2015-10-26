@@ -21,6 +21,10 @@ io.on('connection', function(socket) {
             // TODO: query to db to fetch new data?!
         });
 
+	model.getControllerStatuses(msg.deviceId, function(data) {
+            socket.emit('initStatus', data);
+	});
+
     });
     socket.on('cmd', function(msg) {
         var cmdChannel = 'things/' + msg.deviceId + '/cmd';

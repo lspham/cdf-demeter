@@ -34,6 +34,10 @@ redisSubClient.on('error', function(error) {
     console.log('RedisError ' + error);
 });
 
+redisPubClient.on('error', function(error) {
+    console.log('RedisError ' + error);
+});
+
 // init server
 net.createServer(function(socket) {
     var clientInfo = {
@@ -78,6 +82,10 @@ net.createServer(function(socket) {
             redisPubClient.publish(dataChannel, strMsg);
             logger.info('redisPub', dataChannel, strMsg);
         }
+    });
+
+    socket.on('error', function(error) {
+        logger.info('socketError', error);
     });
 
     socket.on('disconnect', function() {

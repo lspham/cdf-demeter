@@ -81,9 +81,45 @@
                     }
                 }
                 console.log(vm.data.zone.stats);
+
+                if (typeof data.relay !== 'undefined') {
+			var statuses = toBinary(data.relay);
+			console.log('update statuses', statuses);
+			for (var i = 1; i <= 4; i++) {
+				vm['controller' + i] = statuses[i - 1] == '1' ? true : false;
+				console.log('- controller ' + i + ' > ' + vm['controller' + i]);
+			}
+                }
+
                 $rootScope.$apply();
-            });
+            }, function (data) {
+		console.log('onInitStatus', data);
+		if (!data.length) return false;
+		var data = JSON.parse(data[0].data);
+                if (typeof data.relay !== 'undefined') {
+                        var statuses = toBinary(data.relay);
+                        console.log('update statuses', statuses);
+                        for (var i = 1; i <= 4; i++) {
+                                vm['controller' + i] = statuses[i - 1] == '1' ? true : false;
+                                console.log('- controller ' + i + ' > ' + vm['controller' + i]);
+                        }
+                }
+		$rootScope.$apply();
+
+	    });
         }
+
+	function toBinary(intVal) {
+		var binVal = (intVal >>> 0).toString(2);
+		if (binVal.length == 1) {
+			binVal = '000' + binVal;
+		} else if (binVal.length == 2) {
+			binVal = '00' + binVal;
+		} else if (binVal.length == 3) {
+			binVal = '0' + binVal;
+		}
+		return binVal;
+	}
 
         function sendCmd(controller, value) {
             console.log('sendCmd', controller, value);

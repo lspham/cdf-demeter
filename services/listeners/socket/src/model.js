@@ -189,7 +189,20 @@ var model = {
         });
 
         this.stopConnection();
+    },
+
+    getControllerStatuses: function (deviceId, callback) {
+	this.startConnection();
+
+	this.query('SELECT `data` FROM `device` WHERE `id` = 2', [], function(rows) {
+	    console.log('getControllerStatuses', rows);
+	    callback(rows);
+	});
+
+	this.stopConnection();
     }
+
+
 };
 
 module.exports = model;
