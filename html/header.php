@@ -57,13 +57,13 @@
                         <a class="active" href="/">Trang chủ</a>
                     </li>
                     <li>
-                        <a class="" href="ung-dung.php">Ứng dụng</a>
+                        <a class="" href="ung-dung.html">Ứng dụng</a>
                     </li>
                     <!-- <li>
                         <a href="#">Thiết bị</a>
                     </li> -->
                     <li>
-                        <a class="" href="gioi-thieu.php">Giới thiệu</a>
+                        <a class="" href="gioi-thieu.html">Giới thiệu</a>
                     </li>
                 </ul>
                 <ul id="user-menu" class="menu">
