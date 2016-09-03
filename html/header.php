@@ -47,8 +47,6 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <?php global $activeMenu; ?>
-
         <div id="navigation">
             <div class="container">
                 <a id="logo" href="/">
@@ -56,16 +54,16 @@
                 </a>
                 <ul id="main-menu" class="menu">
                     <li>
-                        <a class="<?php if ($activeMenu == 'home') echo 'active'; ?>" href="/">Trang chủ</a>
+                        <a class="active" href="/">Trang chủ</a>
                     </li>
                     <li>
-                        <a class="<?php if ($activeMenu == 'application') echo 'active'; ?>" href="ung-dung.php">Ứng dụng</a>
+                        <a class="" href="ung-dung.html">Ứng dụng</a>
                     </li>
                     <!-- <li>
                         <a href="#">Thiết bị</a>
                     </li> -->
                     <li>
-                        <a class="<?php if ($activeMenu == 'about') echo 'active'; ?>" href="gioi-thieu.php">Giới thiệu</a>
+                        <a class="" href="gioi-thieu.html">Giới thiệu</a>
                     </li>
                 </ul>
                 <ul id="user-menu" class="menu">

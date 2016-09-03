@@ -1,0 +1,9 @@
+{
+  "name": "demeter-webserver",
+  "version": "0.0.1",
+  "description": "abcxyz",
+  "dependencies": {
+    "express": "^4.10.2",
+    "serve-static": "^1.11.1"
+  }
+}
