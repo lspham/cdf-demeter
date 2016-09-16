@@ -4,12 +4,12 @@
             <div class="ui vertical pointing secondary menu">
                 <a class="item active" data-tab="dashboard"><i class="ion-ios-speedometer-outline icon large"></i> Tổng quan</a>
                 <a class="item" data-tab="data"><i class="ion-ios-analytics-outline icon large"></i> Dữ liệu</a>
-                <a class="item" data-tab="staffs"><i class="ion-ios-people-outline icon large"></i> Nhân sự</a>
+<!--                 <a class="item" data-tab="staffs"><i class="ion-ios-people-outline icon large"></i> Nhân sự</a> -->
                 <a class="item" data-tab="notifications"><i class="ion-ios-bell-outline icon large"></i> Cảnh báo</a>
                 <!-- <a class="item" data-tab="settings"><i class="ion-ios-gear-outline icon large"></i> Thiết lập</a> -->
                 <a class="item" data-tab="controlls"><i class="ion-ios-game-controller-b-outline icon large"></i> Điều khiển</a>
                 <a class="item" data-tab="images"><i class="ion-ios-camera-outline icon large"></i> Hình ảnh</a>
-                <a class="item" data-tab="materials" ng-click="vm.getProjectsFinances()"><i class="ion-social-usd-outline icon large"></i> Tài chính/ Vật tư</a>
+<!--                 <a class="item" data-tab="materials" ng-click="vm.getProjectsFinances()"><i class="ion-social-usd-outline icon large"></i> Tài chính/ Vật tư</a> -->
             </div>
         </div>
         <div class="thirteen wide computer ten wide tablet column">
@@ -210,7 +210,7 @@
                 </div>
             </div>
 
-            <div class="ui tab" data-tab="staffs">
+<!--             <div class="ui tab" data-tab="staffs">
                 <h4 class="ui header">
                     <i class="ion-ios-people-outline icon"></i>
                     <div class="content">Nhân sự</div>
@@ -386,7 +386,7 @@
                     </table>
                 </div>
 
-            </div>
+            </div> -->
             <div class="ui tab" data-tab="notifications">
                 <h4 class="ui header">
                     <i class="ion-ios-bell-outline icon"></i>
@@ -520,7 +520,7 @@
                 </div>
             </div>
             <div class="ui tab" data-tab="images">
-                <h4 class="ui header">
+                <!-- <h4 class="ui header">
                     <i class="ion-ios-camera-outline icon"></i>
                     <div class="content">Hình ảnh</div>
                 </h4>
@@ -537,7 +537,7 @@
                       <p>rộng <b>{{data.w}}cm</b></p>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <h4 class="ui header">
                     <i class="ion-ios-videocam-outline icon"></i>
@@ -545,10 +545,24 @@
                 </h4>
 
                 <div class="ui grid stackable">
-                  <div class="eight wide computer column" ng-repeat="data in vm.data.videos">
-                    <div class="ui embed" data-source="youtube" data-id="OpQFFLBMEPI" data-placeholder="data/images/rau/{{data.image}}">
+                    <div class="eight wide computer column" ng-show="vm.data.zone.id==111">
+                        <img class="camera" src="http://cdfgreenhouse.asuscomm.com:50000/CGIProxy.fcgi?cmd=snapPicture2&usr=user&pwd=caudatfarm&t=" 
+                        onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 10)' 
+                        onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 100)' 
+                        alt='' />
                     </div>
-                   </div>
+                    <div class="eight wide computer column" ng-show="vm.data.zone.id==222">
+                        <img class="camera" src="http://cdfgreenhouse.asuscomm.com:50002/CGIProxy.fcgi?cmd=snapPicture2&usr=user&pwd=caudatfarm&t=" 
+                        onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 10)' 
+                        onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 100)' 
+                        alt='' />
+                    </div>
+                    <div class="eight wide computer column" ng-show="vm.data.zone.id==333">
+                        <img class="camera" src="http://cdfgreenhouse.asuscomm.com:50003/CGIProxy.fcgi?cmd=snapPicture2&usr=user&pwd=caudatfarm&t=" 
+                        onload='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 10)' 
+                        onerror='setTimeout(function() {src = src.substring(0, (src.lastIndexOf("t=")+2))+(new Date()).getTime()}, 100)' 
+                        alt='' />
+                    </div>
                 </div>
             </div>
             <div class="ui tab materials" data-tab="materials">

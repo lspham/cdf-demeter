@@ -173,3 +173,8 @@ canvas {
   width: 100%;
   text-align: right;
 }
+
+.camera  {
+    width: 200%;
+    height: 200%;
+}

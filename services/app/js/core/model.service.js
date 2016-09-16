@@ -95,19 +95,19 @@
                     zoneCount: 2,
                     area: 220,
                     zones: {
-                        // 111: {
-                        //     id: 111,
-                        //     name: 'Nhà kính - Dâu',
-                        //     cover: 'data/images/farm-dau.jpg',
-                        //     staffs: 4,
-                        //     notifications: 4,
-                        //     progress: 40,
-                        //     stats: stats
-                        // },
-                        999: {
-                            id: 999,
-                            name: 'Đồi chè',
-                            cover: 'data/images/bg-3.jpg',
+                        111: {
+                            id: 111,
+                            name: 'B1 - Lettuce',
+                            cover: 'data/images/farm-rau.jpg',
+                            staffs: 4,
+                            notifications: 4,
+                            progress: 40,
+                            stats: stats
+                        },
+                        222: {
+                            id: 222,
+                            name: 'B2 - Strawberry',
+                            cover: 'data/images/farm-dau.jpg',
                             staffs: 11,
                             notifications: 6,
                             progress: 18,
@@ -115,10 +115,10 @@
                             end: new Date(2015, 9, 20),
                             start: new Date(2015, 8, 1)
                         },
-                        666: {
-                            id: 666,
-                            name: 'Farm rau',
-                            cover: 'data/images/farm-rau.jpg',
+                        333: {
+                            id: 333,
+                            name: 'B3 - Tomato & Cucumber',
+                            cover: 'data/images/farm-tomato.jpg',
                             staffs: 11,
                             notifications: 6,
                             progress: 80,
@@ -131,108 +131,17 @@
                 },
                 2: {
                     id: 2,
-                    name: 'Demeter Farm',
-                    cover: 'data/images/bg-1.jpg',
-                    addr: 'Quận 1, Sài Gòn.',
+                    name: 'Demo Farm',
+                    cover: 'data/images/demeter-farm.png',
+                    addr: '',
                     staffs: 11,
                     zoneCount: 3,
                     area: 10,
                     zones: {
                         333: {
                             id: 333,
-                            name: 'Nhà kính - Cà chua',
-                            cover: 'data/images/thumb-3.jpg',
-                            staffs: 4,
-                            notifications: 4,
-                            progress: 10,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        },
-                        444: {
-                            id: 444,
-                            name: 'Nhà kính - Xà lách',
-                            cover: 'data/images/thumb-6.jpg',
-                            staffs: 18,
-                            notifications: 1,
-                            progress: 96,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        },
-                        555: {
-                            id: 555,
-                            name: 'Hồ nuôi - Cá chép',
-                            cover: 'data/images/thumb-4.jpg',
-                            staffs: 91,
-                            notifications: 2,
-                            progress: 50,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        },
-                    },
-                    weathers: weathers
-                },
-                3: {
-                    id: 3,
-                    name: 'Cà Mau Farm',
-                    cover: 'data/images/thumb-3.jpg',
-                    addr: 'Quận 1, Sài Gòn.',
-                    staffs: 11,
-                    zoneCount: 3,
-                    area: 10,
-                    zones: {
-                        333: {
-                            id: 333,
-                            name: 'Nhà kính - Cà chua',
-                            cover: 'data/images/thumb-3.jpg',
-                            staffs: 4,
-                            notifications: 4,
-                            progress: 10,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        }
-                    },
-                    weathers: weathers
-                },
-                4: {
-                    id: 4,
-                    name: 'Đồng Nai Farm',
-                    cover: 'data/images/thumb-1.jpg',
-                    addr: 'Quận 1, Sài Gòn.',
-                    staffs: 11,
-                    zoneCount: 3,
-                    area: 10,
-                    zones: {
-                        333: {
-                            id: 333,
-                            name: 'Nhà kính - Cà chua',
-                            cover: 'data/images/thumb-3.jpg',
-                            staffs: 4,
-                            notifications: 4,
-                            progress: 10,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        }
-                    },
-                    weathers: weathers
-                },
-                5: {
-                    id: 5,
-                    name: 'Đồng Tháp Farm',
-                    cover: 'data/images/thumb-2.jpg',
-                    addr: 'Quận 1, Sài Gòn.',
-                    staffs: 11,
-                    zoneCount: 3,
-                    area: 10,
-                    zones: {
-                        333: {
-                            id: 333,
-                            name: 'Nhà kính - Cà chua',
-                            cover: 'data/images/thumb-3.jpg',
+                            name: 'Demo Zone',
+                            cover: 'data/images/demeter-farm.png',
                             staffs: 4,
                             notifications: 4,
                             progress: 10,
@@ -453,35 +362,41 @@
                 series: {
                     temp: ['Nhiệt độ'],
                     humid: ['Độ ẩm không khí'],
-                    humid2: ['Độ ẩm đất'],
-                    o2: ['O2'],
-                    co2: ['CO2'],
                     light: ['Ánh sáng'],
-                    pH: ['pH'],
-                    ec: ['EC'],
-                    vpd: ['VPD']
+                    airpress: ['Áp suất']
+                    // humid2: ['Độ ẩm đất'],
+                    // o2: ['O2'],
+                    // co2: ['CO2'],
+                    // light: ['Ánh sáng'],
+                    // pH: ['pH'],
+                    // ec: ['EC'],
+                    // vpd: ['VPD']
                 },
                 units: {
                     temp: '°C',
                     humid: '%',
-                    humid2: '%',
-                    o2: 'ppm',
-                    co2: 'ppm',
                     light: 'lux',
-                    pH: '',
-                    ec: '',
-                    vpd: ''
+                    airpress: 'pa'
+                    // humid2: '%',
+                    // o2: 'ppm',
+                    // co2: 'ppm',
+                    // light: 'lux',
+                    // pH: '',
+                    // ec: '',
+                    // vpd: ''
                 },
                 data: {
                     temp: [],
                     humid: [], // humidity - độ ẩm
-                    humid2: [], //precipitation - lượng mưa
-                    o2: [],
-                    co2: [],
                     light: [],
-                    pH: [],
-                    ec: [],
-                    vpd: []
+                    airpress: []
+                    // humid2: [], //precipitation - lượng mưa
+                    // o2: [],
+                    // co2: [],
+                    // light: [],
+                    // pH: [],
+                    // ec: [],
+                    // vpd: []
                 },
                 labels: [],
                 // colours: {
@@ -529,13 +444,15 @@
                 // data
                 stats.data.temp[i]   = randomInt(22, 5);
                 stats.data.humid[i]  = randomInt(75, 15);
-                stats.data.humid2[i] = randomInt(65, 15);
-                stats.data.o2[i]     = randomInt(9, 3);
-                stats.data.co2[i]    = randomInt(380, 30);
-                stats.data.light[i]  = randomInt(475, 125);
-                stats.data.pH[i]     = randomFloat(6.2, 0.5);
-                stats.data.ec[i]     = randomFloat(1.1, 0.4);
-                stats.data.vpd[i]    = randomFloat(1.4, 0.3);
+                stats.data.light[i]  = randomInt(75, 15);
+                stats.data.airpress[i]  = randomInt(75, 15);
+                // stats.data.humid2[i] = randomInt(65, 15);
+                // stats.data.o2[i]     = randomInt(9, 3);
+                // stats.data.co2[i]    = randomInt(380, 30);
+                // stats.data.light[i]  = randomInt(475, 125);
+                // stats.data.pH[i]     = randomFloat(6.2, 0.5);
+                // stats.data.ec[i]     = randomFloat(1.1, 0.4);
+                // stats.data.vpd[i]    = randomFloat(1.4, 0.3);
             }
 
             if (dateCount == 0) {
