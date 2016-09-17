@@ -53,6 +53,11 @@
             }, function (data) {
                 // on update data
                 console.log('updateData', data);
+
+                var getData = JSON.parse(data);
+                var tmp = getData.data;
+                //console.log(data.field1);
+
                 var tim = new Date(data['tim'] * 1000), // + 7 * 60 * 60 * 1000
                     min = tim.getMinutes(),
                     sec = tim.getSeconds(),
@@ -91,6 +96,11 @@
         			}
                 }
 
+                vm.data.zone.stats.data.temp[0] = tmp.temp / 10;
+                vm.data.zone.stats.data.humid[0] = tmp.humid / 10;
+                vm.data.zone.stats.data.light[0] = tmp.light;
+                vm.data.zone.stats.data.airpress[0] = tmp.airpress;
+
                 $rootScope.$apply();
             }, function (data) {
         		console.log('onInitStatus', data);
@@ -126,6 +136,7 @@
 
         function sendCmd(controller, value) {
             console.log('sendCmd', controller, value);
+            console.log('zone', vm.data.zone.id);
             socketService.cmd(null, '#' + controller + ',' + (value ? '1' : '0'));
         }
 

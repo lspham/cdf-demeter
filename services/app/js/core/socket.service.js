@@ -21,7 +21,7 @@
 
             function init() {
                 // socket = io('http://localhost:6006');
-                socket = io('http://demo2.demeter.vn:3003');
+                socket = io('128.199.107.77:3000');
             }
 
             function subscribe(deviceId, onInitData, onUpdateData, onInitStatus, onOnline) {

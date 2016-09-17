@@ -92,7 +92,7 @@
                     cover: 'data/images/bg-3.jpg',
                     addr: 'Cầu Đất, Lâm Đồng.',
                     staffs: 61,
-                    zoneCount: 2,
+                    zoneCount: 3,
                     area: 220,
                     zones: {
                         111: {
@@ -138,8 +138,8 @@
                     zoneCount: 3,
                     area: 10,
                     zones: {
-                        333: {
-                            id: 333,
+                        444: {
+                            id: 444,
                             name: 'Demo Zone',
                             cover: 'data/images/demeter-farm.png',
                             staffs: 4,
@@ -185,8 +185,169 @@
             var projects = getProject(),
                 data = projects[projectId];
 
+            var controls = getZoneControl(projectId, zoneId);
+
+            data['zones'][zoneId].controls = controls;
             data = calcProgress(data);
+
+            console.log(data);
             return onSuccess(data['zones'][zoneId]);
+        }
+
+        function getZoneControl(projectId, zoneId)
+        {
+            var controls = [];
+
+            if (projectId == 1) {
+                if (zoneId == 111) { // B1
+                    controls = [
+                        {
+                            id: 0,
+                            label: '',
+                            device: 'Curtain 1 UP',
+                            status: true
+                        },
+                        {
+                            id: 1,
+                            label: '',
+                            device: 'Curtain 1 DOWN',
+                            status: false
+                        },
+                        {
+                            id: 2,
+                            label: '',
+                            device: 'Curtain 2 UP',
+                            status: true
+                        },
+                        {
+                            id: 3,
+                            label: '',
+                            device: 'Curtain 2 DOWN',
+                            status: false
+                        },
+                        {
+                            id: 4,
+                            label: '',
+                            device: 'Curtain 3 UP',
+                            status: true
+                        },
+                        {
+                            id: 5,
+                            label: '',
+                            device: 'Curtain 3 DOWN',
+                            status: true
+                        },
+                        {
+                            id: 6,
+                            label: '',
+                            device: 'Shade Curtain OPEN',
+                            status: false
+                        },
+                        {
+                            id: 7,
+                            label: '',
+                            device: 'Shade Curtain CLOSE',
+                            status: false
+                        },
+                        {
+                            id: 8,
+                            label: '',
+                            device: 'FAN',
+                            status: false
+                        }
+                    ];
+                }
+
+                if (zoneId == 222) { // B2
+                    controls = [
+                        {
+                            id: 0,
+                            label: '',
+                            device: 'FAN1',
+                            status: true
+                        },
+                        {
+                            id: 1,
+                            label: '',
+                            device: 'FAN2',
+                            status: false
+                        },
+                        {
+                            id: 2,
+                            label: '',
+                            device: 'FAN3',
+                            status: true
+                        },
+                        {
+                            id: 3,
+                            label: '',
+                            device: 'FAN4',
+                            status: false
+                        }
+                    ];
+                }
+
+                if (zoneId == 333) { // B3
+                    controls = [
+                        {
+                            id: 0,
+                            label: '',
+                            device: 'Curtain 111 UP',
+                            status: true
+                        },
+                        {
+                            id: 1,
+                            label: '',
+                            device: 'Curtain 1 DOWN',
+                            status: false
+                        },
+                        {
+                            id: 2,
+                            label: '',
+                            device: 'Curtain 2 UP',
+                            status: true
+                        },
+                        {
+                            id: 3,
+                            label: '',
+                            device: 'Curtain 2 DOWN',
+                            status: false
+                        },
+                        {
+                            id: 4,
+                            label: '',
+                            device: 'Curtain 3 UP',
+                            status: true
+                        },
+                        {
+                            id: 5,
+                            label: '',
+                            device: 'Curtain 3 DOWN',
+                            status: true
+                        },
+                        {
+                            id: 6,
+                            label: '',
+                            device: 'Shade Curtain OPEN',
+                            status: false
+                        },
+                        {
+                            id: 7,
+                            label: '',
+                            device: 'Shade Curtain CLOSE',
+                            status: false
+                        },
+                        {
+                            id: 8,
+                            label: '',
+                            device: 'FAN',
+                            status: false
+                        }
+                    ];
+                }
+            }
+
+            return controls;
         }
 
         function getProjectFullStats (projectId, onSuccess) {
@@ -455,17 +616,17 @@
                 // stats.data.vpd[i]    = randomFloat(1.4, 0.3);
             }
 
-            if (dateCount == 0) {
-                stats.data = extendData.data;
-                stats.labels = extendData.labels;
+            // if (dateCount == 0) {
+            //     stats.data = extendData.data;
+            //     stats.labels = extendData.labels;
 
-                stats.data.humid2 = [];
-                stats.data.vpd = [];
-                for (var i = 0; i < 7; i++) {
-                    stats.data.humid2[i] = randomInt(65, 15);
-                    stats.data.vpd[i]    = randomFloat(1.4, 0.3);
-                }
-            }
+            //     stats.data.humid2 = [];
+            //     stats.data.vpd = [];
+            //     for (var i = 0; i < 7; i++) {
+            //         stats.data.humid2[i] = randomInt(65, 15);
+            //         stats.data.vpd[i]    = randomFloat(1.4, 0.3);
+            //     }
+            // }
 
             return stats;
         }

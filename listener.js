@@ -31,7 +31,12 @@ io.on('connection', function(socket){
     console.log('redisSub: ' + msg.deviceId);
     	 });
 
-    socket.on('data', function(msg){
+    socket.on('device-data', function(msg){
+    	console.log('dev-data: ' + msg)
+		io.emit('data', msg);
+    });
+	
+	socket.on('data', function(msg){
     	console.log('data: ' + msg)
     });
 
@@ -40,32 +45,6 @@ io.on('connection', function(socket){
 
 
       console.log("init Project");
-      
-      // weathers = {
-      //     active: 'temp',
-      //     series: {
-      //         temp: ['Nhiệt độ'],
-      //         humid: ['Độ ẩm'],
-      //         precip: ['Lượng mưa'],
-      //         wind: ['Gió']
-      //     },
-      //     units: {
-      //         temp: '°C',
-      //         humid: '%',
-      //         precip: '%',
-      //         wind: 'km/h'
-      //     },
-      //     data: {
-      //         temp: [],
-      //         humid: [],
-      //         precip: [],
-      //         wind: [],
-      //     },
-      //     labels: [],
-      //     options: getLineOptions()
-      // };
-
-      // //var stats = getStats(7);
 
       var results;
 
@@ -81,35 +60,12 @@ io.on('connection', function(socket){
     });
 
     socket.on('getProjectImages', function(msg) {
-      var images = [
-                {
-                    image: '1.jpeg',
-                    h: 2,
-                    w: 2
-                },
-                {
-                    image: '2.jpeg',
-                    h: 3,
-                    w: 3
-                },
-                {
-                    image: '3.jpeg',
-                    h: 3,
-                    w: 4
-                },
-                {
-                    image: '4.jpeg',
-                    h: 5,
-                    w: 6
-                },
-                 {
-                    image: '24.jpeg',
-                    h: 1120,
-                    w: 60
-                }
-            ];
       io.emit('getProjectImages', images);
     });
+	
+	socket.on('device-connect', function (msg) {
+		console.log("device: " + msg)
+	});
 
 });
 

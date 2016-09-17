@@ -83,7 +83,7 @@
                               click="">
                             </canvas> -->
 
-                            <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active].slice().reverse()], labels: vm.data.zone.stats.labels.slice().reverse()}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
+                            <chartist class="ct-chart" chartist-data="{series: [vm.data.zone.stats.data[vm.data.zone.stats.active].slice().reverse()], labels: vm.data.zone.stats.labels.slice()}" chartist-chart-type="Line" chartist-chart-options="vm.data.zone.stats.options"></chartist>
 
                             <div class="online-status">
                               <div class="online" ng-show="vm.online">
@@ -465,29 +465,71 @@
                     </h4>
                   </div>
                   <div class="eight wide computer column">
-                    <div class="ui segments dmt box">
+                    <div class="ui segments dmt box" ng-show="vm.data.zone.id==111">
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
                               <input type="checkbox" name="controller1" ng-change="vm.sendCmd(1, vm.controller1)" ng-model="vm.controller1" checked="checked">
-                              <label>Đèn</label>
+                              <label>Curtain1 UP</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
                               <input type="checkbox" name="controller2" ng-change="vm.sendCmd(2, vm.controller2)" ng-model="vm.controller2">
-                              <label>Phun sương</label>
+                              <label>Curtain1 DOWN</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
                               <input type="checkbox" name="controller3" ng-change="vm.sendCmd(3, vm.controller3)" ng-model="vm.controller3">
-                              <label>Lưới cắt nắng</label>
+                              <label>Curtain2 UP</label>
                             </div>
                         </div>
                         <div class="ui segment">
                             <div class="ui toggle checkbox">
                               <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
-                              <label>Tưới</label>
+                              <label>Curtain2 DOWN</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller5" ng-change="vm.sendCmd(4, vm.controller5)" ng-model="vm.controller5">
+                              <label>Curtain3 UP</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller6" ng-change="vm.sendCmd(4, vm.controller6)" ng-model="vm.controller6">
+                              <label>Curtain3 DOWN</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller7" ng-change="vm.sendCmd(4, vm.controller7)" ng-model="vm.controller7">
+                              <label>Curtain4 UP</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller8" ng-change="vm.sendCmd(4, vm.controller8)" ng-model="vm.controller8">
+                              <label>Curtain4 DOWN</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller9" ng-change="vm.sendCmd(4, vm.controller9)" ng-model="vm.controller9">
+                              <label>Shade Curtain OPEN</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller10" ng-change="vm.sendCmd(4, vm.controller10)" ng-model="vm.controller10">
+                              <label>Shade Curtain CLOSE</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller11" ng-change="vm.sendCmd(4, vm.controller11)" ng-model="vm.controller11">
+                              <label>FAN</label>
                             </div>
                         </div>
 
@@ -501,20 +543,117 @@
                             <span class="ui red">Offline</span>
                           </div>
                         </div>
-                        <!-- <div class="ui segment">
-                            <div class="ui toggle checkbox">
-                              <input type="checkbox" name="public">
-                              <label>Châm phân</label>
-                            </div>
-                        </div> -->
                     </div>
-                  </div>
-                  <div class="eight wide computer column">
-                    <div class="ui grid stackable">
-                      <div class="sixteen wide computer column" ng-repeat="data in vm.data.videos">
-                        <div class="ui embed" data-source="youtube" data-id="OpQFFLBMEPI" data-placeholder="data/images/rau/{{data.image}}">
+                    <div class="ui segments dmt box" ng-show="vm.data.zone.id==222">
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller1" ng-change="vm.sendCmd(1, vm.controller1)" ng-model="vm.controller1" checked="checked">
+                              <label>FAN1</label>
+                            </div>
                         </div>
-                       </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller2" ng-change="vm.sendCmd(2, vm.controller2)" ng-model="vm.controller2">
+                              <label>FAN2</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller3" ng-change="vm.sendCmd(3, vm.controller3)" ng-model="vm.controller3">
+                              <label>FAN3</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
+                              <label>FAN4</label>
+                            </div>
+                        </div>
+
+                        <div class="online-status">
+                          <div class="online" ng-show="vm.online">
+                            <a class="ui green empty circular label"></a>
+                            <span class="ui green">Online</span>
+                          </div>
+                          <div class="offline" ng-show="!vm.online">
+                            <a class="ui red empty circular label"></a>
+                            <span class="ui red">Offline</span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="ui segments dmt box" ng-show="vm.data.zone.id==333">
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller1" ng-change="vm.sendCmd(1, vm.controller1)" ng-model="vm.controller1" checked="checked">
+                              <label>FAN1</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller2" ng-change="vm.sendCmd(2, vm.controller2)" ng-model="vm.controller2">
+                              <label>FAN2</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller3" ng-change="vm.sendCmd(3, vm.controller3)" ng-model="vm.controller3">
+                              <label>FAN3</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
+                              <label>FAN4</label>
+                            </div>
+                        </div>
+
+                        <div class="online-status">
+                          <div class="online" ng-show="vm.online">
+                            <a class="ui green empty circular label"></a>
+                            <span class="ui green">Online</span>
+                          </div>
+                          <div class="offline" ng-show="!vm.online">
+                            <a class="ui red empty circular label"></a>
+                            <span class="ui red">Offline</span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="ui segments dmt box" ng-show="vm.data.zone.id==444">
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller1" ng-change="vm.sendCmd(1, vm.controller1)" ng-model="vm.controller1" checked="checked">
+                              <label>DEVICE 1</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller2" ng-change="vm.sendCmd(2, vm.controller2)" ng-model="vm.controller2">
+                              <label>DEVICE 2</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller3" ng-change="vm.sendCmd(3, vm.controller3)" ng-model="vm.controller3">
+                              <label>DEVICE 3</label>
+                            </div>
+                        </div>
+                        <div class="ui segment">
+                            <div class="ui toggle checkbox">
+                              <input type="checkbox" name="controller4" ng-change="vm.sendCmd(4, vm.controller4)" ng-model="vm.controller4">
+                              <label>DEVICE 4</label>
+                            </div>
+                        </div>
+
+                        <div class="online-status">
+                          <div class="online" ng-show="vm.online">
+                            <a class="ui green empty circular label"></a>
+                            <span class="ui green">Online</span>
+                          </div>
+                          <div class="offline" ng-show="!vm.online">
+                            <a class="ui red empty circular label"></a>
+                            <span class="ui red">Offline</span>
+                          </div>
+                        </div>
                     </div>
                   </div>
                 </div>
@@ -565,7 +704,7 @@
                     </div>
                 </div>
             </div>
-            <div class="ui tab materials" data-tab="materials">
+<!--             <div class="ui tab materials" data-tab="materials">
                 <h4 class="ui header">
                     <i class="ion-social-usd-outline icon"></i>
                     <div class="content">Tài chính</div>
@@ -695,7 +834,7 @@
                       </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
