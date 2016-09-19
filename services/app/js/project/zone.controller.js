@@ -42,7 +42,7 @@
                 vm.data.videos = results;
             });
 
-            socketService.subscribe(null, function (data) {
+            socketService.subscribe($stateParams['id'], function (data) {
                 // on init data
                 console.log('initData', data);
 
@@ -122,6 +122,8 @@
                     if (tmp.light < 0) tmp.light = 32767 - tmp.light;   // signed number
                     vm.data.zone.stats.data.light[0] = tmp.light;
                     vm.data.zone.stats.data.airpress[0] = tmp.airpress;
+                    vm.data.zone.stats.data.pH[0] = 0;
+                    vm.data.zone.stats.data.eC[0] = 0;
                 }
 
                 $rootScope.$apply();
