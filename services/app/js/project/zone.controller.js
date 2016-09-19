@@ -55,52 +55,74 @@
                 console.log('updateData', data);
 
                 var getData = JSON.parse(data);
-                var tmp = getData.data;
-                //console.log(data.field1);
 
-                var tim = new Date(data['tim'] * 1000), // + 7 * 60 * 60 * 1000
-                    min = tim.getMinutes(),
-                    sec = tim.getSeconds(),
-                    hour = tim.getHours();
+                if (getData.deviceid == '98:4F:EE:05:7C:A9' && vm.data.zone.id == 111) {
+                    var tmp = getData.data;
+                    //console.log(data.field1);
 
-                if (min < 10) {
-                    min = '0' + min;
+                    // var tim = new Date(data['tim'] * 1000), // + 7 * 60 * 60 * 1000
+                    //     min = tim.getMinutes(),
+                    //     sec = tim.getSeconds(),
+                    //     hour = tim.getHours();
+
+                    // if (min < 10) {
+                    //     min = '0' + min;
+                    // }
+
+                    // if (sec < 10) {
+                    //     sec = '0' + sec;
+                    // }
+
+                    // if (hour < 10) {
+                    //     hour = '0' + hour;
+                    // }
+
+                    // tim = hour + ':' + min + ':' + sec;
+                    // vm.data.zone.stats.labels.shift();
+                    // vm.data.zone.stats.labels.unshift(tim);
+
+                    // for (var key in vm.data.zone.stats.data) {
+                    //     if (typeof data[key] !== 'undefined') {
+                    //         vm.data.zone.stats.data[key].shift();
+                    //         vm.data.zone.stats.data[key].unshift(data[key]);
+                    //     }
+                    // }
+                    // console.log(vm.data.zone.stats);
+
+                    if (typeof data.relay !== 'undefined') {
+            			var statuses = toBinary(data.relay);
+            			console.log('update statuses', statuses);
+            			for (var i = 1; i <= 4; i++) {
+            				vm['controller' + i] = statuses[i - 1] == '1' ? true : false;
+            				console.log('- controller ' + i + ' > ' + vm['controller' + i]);
+            			}
+                    }
+
+                    vm.data.zone.stats.data.temp[0] = tmp.temp / 10;
+                    vm.data.zone.stats.data.humid[0] = tmp.humid / 10;
+                    if (tmp.light < 0) tmp.light = 32767 - tmp.light;   // signed number
+                    vm.data.zone.stats.data.light[0] = tmp.light;
+                    vm.data.zone.stats.data.airpress[0] = tmp.airpress;
                 }
 
-                if (sec < 10) {
-                    sec = '0' + sec;
+                if (getData.deviceid == '98:4F:EE:05:5E:23' && vm.data.zone.id == 444) {
+                    var tmp = getData.data;
+
+                    if (typeof data.relay !== 'undefined') {
+                        var statuses = toBinary(data.relay);
+                        console.log('update statuses', statuses);
+                        for (var i = 1; i <= 4; i++) {
+                            vm['controller' + i] = statuses[i - 1] == '1' ? true : false;
+                            console.log('- controller ' + i + ' > ' + vm['controller' + i]);
+                        }
+                    }
+
+                    vm.data.zone.stats.data.temp[0] = tmp.temp / 10;
+                    vm.data.zone.stats.data.humid[0] = tmp.humid / 10;
+                    if (tmp.light < 0) tmp.light = 32767 - tmp.light;   // signed number
+                    vm.data.zone.stats.data.light[0] = tmp.light;
+                    vm.data.zone.stats.data.airpress[0] = tmp.airpress;
                 }
-
-                if (hour < 10) {
-                    hour = '0' + hour;
-                }
-
-                // tim = hour + ':' + min + ':' + sec;
-                // vm.data.zone.stats.labels.shift();
-                // vm.data.zone.stats.labels.unshift(tim);
-
-                // for (var key in vm.data.zone.stats.data) {
-                //     if (typeof data[key] !== 'undefined') {
-                //         vm.data.zone.stats.data[key].shift();
-                //         vm.data.zone.stats.data[key].unshift(data[key]);
-                //     }
-                // }
-                // console.log(vm.data.zone.stats);
-
-                if (typeof data.relay !== 'undefined') {
-        			var statuses = toBinary(data.relay);
-        			console.log('update statuses', statuses);
-        			for (var i = 1; i <= 4; i++) {
-        				vm['controller' + i] = statuses[i - 1] == '1' ? true : false;
-        				console.log('- controller ' + i + ' > ' + vm['controller' + i]);
-        			}
-                }
-
-                vm.data.zone.stats.data.temp[0] = tmp.temp / 10;
-                vm.data.zone.stats.data.humid[0] = tmp.humid / 10;
-                if (tmp.light < 0) tmp.light = 32767 - tmp.light;   // signed number
-                vm.data.zone.stats.data.light[0] = tmp.light;
-                vm.data.zone.stats.data.airpress[0] = tmp.airpress;
 
                 $rootScope.$apply();
             }, function (data) {

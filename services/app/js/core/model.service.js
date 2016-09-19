@@ -91,7 +91,7 @@
                     name: 'Cầu Đất Farm',
                     cover: 'data/images/bg-3.jpg',
                     addr: 'Cầu Đất, Lâm Đồng.',
-                    staffs: 61,
+                    staffs: 150,
                     zoneCount: 3,
                     area: 220,
                     zones: {
