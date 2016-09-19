@@ -102,7 +102,9 @@
                             staffs: 4,
                             notifications: 4,
                             progress: 40,
-                            stats: stats
+                            stats: stats,
+                            end: new Date(2016, 9, 3),
+                            start: new Date(2016, 7, 15)
                         },
                         222: {
                             id: 222,
@@ -112,8 +114,8 @@
                             notifications: 6,
                             progress: 18,
                             stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
+                            end: new Date(2016, 8, 1),
+                            start: new Date(2016, 5, 1)
                         },
                         333: {
                             id: 333,
@@ -123,8 +125,8 @@
                             notifications: 6,
                             progress: 80,
                             stats: stats,
-                            end: new Date(2015, 9, 15),
-                            start: new Date(2015, 8, 10)
+                            end: new Date(2016, 7, 15),
+                            start: new Date(2016, 4, 30)
                         }
                     },
                     weathers: weathers
