@@ -24,7 +24,7 @@
                 localStorageService.set('demeter_user', angular.toJson({
                     expired: +new Date() + 86400000,//86400000
                     username: 'admin',
-                    name: 'Vinh Le'
+                    name: 'admin'
                 }));
                 return true;
             }

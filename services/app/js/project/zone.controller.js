@@ -75,17 +75,17 @@
                     hour = '0' + hour;
                 }
 
-                tim = hour + ':' + min + ':' + sec;
-                vm.data.zone.stats.labels.shift();
-                vm.data.zone.stats.labels.unshift(tim);
+                // tim = hour + ':' + min + ':' + sec;
+                // vm.data.zone.stats.labels.shift();
+                // vm.data.zone.stats.labels.unshift(tim);
 
-                for (var key in vm.data.zone.stats.data) {
-                    if (typeof data[key] !== 'undefined') {
-                        vm.data.zone.stats.data[key].shift();
-                        vm.data.zone.stats.data[key].unshift(data[key]);
-                    }
-                }
-                console.log(vm.data.zone.stats);
+                // for (var key in vm.data.zone.stats.data) {
+                //     if (typeof data[key] !== 'undefined') {
+                //         vm.data.zone.stats.data[key].shift();
+                //         vm.data.zone.stats.data[key].unshift(data[key]);
+                //     }
+                // }
+                // console.log(vm.data.zone.stats);
 
                 if (typeof data.relay !== 'undefined') {
         			var statuses = toBinary(data.relay);
@@ -98,6 +98,7 @@
 
                 vm.data.zone.stats.data.temp[0] = tmp.temp / 10;
                 vm.data.zone.stats.data.humid[0] = tmp.humid / 10;
+                if (tmp.light < 0) tmp.light = 32767 - tmp.light;   // signed number
                 vm.data.zone.stats.data.light[0] = tmp.light;
                 vm.data.zone.stats.data.airpress[0] = tmp.airpress;
 

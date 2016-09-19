@@ -524,40 +524,25 @@
                     temp: ['Nhiệt độ'],
                     humid: ['Độ ẩm không khí'],
                     light: ['Ánh sáng'],
-                    airpress: ['Áp suất']
-                    // humid2: ['Độ ẩm đất'],
-                    // o2: ['O2'],
-                    // co2: ['CO2'],
-                    // light: ['Ánh sáng'],
-                    // pH: ['pH'],
-                    // ec: ['EC'],
-                    // vpd: ['VPD']
+                    airpress: ['Áp suất'],
+                    pH: ['pH'],
+                    ec: ['EC']
                 },
                 units: {
                     temp: '°C',
                     humid: '%',
                     light: 'lux',
-                    airpress: 'pa'
-                    // humid2: '%',
-                    // o2: 'ppm',
-                    // co2: 'ppm',
-                    // light: 'lux',
-                    // pH: '',
-                    // ec: '',
-                    // vpd: ''
+                    airpress: 'pa',
+                    pH: '',
+                    ec: ''
                 },
                 data: {
                     temp: [],
                     humid: [], // humidity - độ ẩm
                     light: [],
-                    airpress: []
-                    // humid2: [], //precipitation - lượng mưa
-                    // o2: [],
-                    // co2: [],
-                    // light: [],
-                    // pH: [],
-                    // ec: [],
-                    // vpd: []
+                    airpress: [],
+                    pH: [],
+                    ec: []
                 },
                 labels: [],
                 // colours: {
@@ -603,10 +588,12 @@
                 stats.labels.push(date.getDate() + '/' + (date.getMonth() + 1));
 
                 // data
-                stats.data.temp[i]   = randomInt(22, 5);
-                stats.data.humid[i]  = randomInt(75, 15);
+                stats.data.temp[i]   = randomInt(22.1, 5);
+                stats.data.humid[i]  = randomInt(75.4, 15);
                 stats.data.light[i]  = randomInt(75, 15);
-                stats.data.airpress[i]  = randomInt(75, 15);
+                stats.data.airpress[i]  = randomInt(83650, 200);
+                stats.data.pH[i] = 6.0;
+                stats.data.ec[i] = 1.5;
                 // stats.data.humid2[i] = randomInt(65, 15);
                 // stats.data.o2[i]     = randomInt(9, 3);
                 // stats.data.co2[i]    = randomInt(380, 30);
