@@ -130,30 +130,8 @@
                         }
                     },
                     weathers: weathers
-                },
-                2: {
-                    id: 2,
-                    name: 'Demo Farm',
-                    cover: 'data/images/demeter-farm.png',
-                    addr: '',
-                    staffs: 11,
-                    zoneCount: 3,
-                    area: 10,
-                    zones: {
-                        444: {
-                            id: 444,
-                            name: 'Demo Zone',
-                            cover: 'data/images/demeter-farm.png',
-                            staffs: 4,
-                            notifications: 4,
-                            progress: 10,
-                            stats: stats,
-                            end: new Date(2015, 9, 20),
-                            start: new Date(2015, 8, 1)
-                        }
-                    },
-                    weathers: weathers
-                }
+               }
+                
             };
 
             return projects;
